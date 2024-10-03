@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "blackstone_axes",
+  "key": {
+    "/": {
+      "item": "mstv-base:dark_oak_stick"
+    },
+    "<": {
+      "item": "minecraft:blackstone"
+    }
+  },
+  "pattern": [
+    "<<",
+    "</",
+    " /"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:dark_oak_blackstone_axe"
+  }
+}

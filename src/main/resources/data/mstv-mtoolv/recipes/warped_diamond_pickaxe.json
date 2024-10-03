@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "diamond_pickaxes",
+  "key": {
+    "/": {
+      "item": "mstv-base:warped_stick"
+    },
+    "<": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "<<<",
+    " / ",
+    " / "
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:warped_diamond_pickaxe"
+  }
+}

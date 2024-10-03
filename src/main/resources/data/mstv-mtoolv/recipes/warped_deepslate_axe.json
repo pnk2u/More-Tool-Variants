@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "deepslate_axes",
+  "key": {
+    "/": {
+      "item": "mstv-base:warped_stick"
+    },
+    "<": {
+      "item": "minecraft:deepslate"
+    }
+  },
+  "pattern": [
+    "<<",
+    "</",
+    " /"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:warped_deepslate_axe"
+  }
+}

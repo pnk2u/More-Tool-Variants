@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "blackstone_shovels",
+  "key": {
+    "/": {
+      "item": "mstv-base:acacia_stick"
+    },
+    "<": {
+      "item": "minecraft:blackstone"
+    }
+  },
+  "pattern": [
+    "<",
+    "/",
+    "/"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:acacia_blackstone_shovel"
+  }
+}

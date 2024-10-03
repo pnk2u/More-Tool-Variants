@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "diamond_axes",
+  "key": {
+    "/": {
+      "item": "minecraft:bamboo"
+    },
+    "<": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "<<",
+    "</",
+    " /"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:bamboo_diamond_axe"
+  }
+}

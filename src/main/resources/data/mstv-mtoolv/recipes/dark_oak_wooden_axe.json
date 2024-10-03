@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "wooden_axes",
+  "key": {
+    "/": {
+      "item": "mstv-base:dark_oak_stick"
+    },
+    "<": {
+      "item": "minecraft:dark_oak_planks"
+    }
+  },
+  "pattern": [
+    "<<",
+    "</",
+    " /"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:dark_oak_wooden_axe"
+  }
+}

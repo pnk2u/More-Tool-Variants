@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "blackstone_axes",
+  "key": {
+    "/": {
+      "item": "mstv-base:mangrove_stick"
+    },
+    "<": {
+      "item": "minecraft:blackstone"
+    }
+  },
+  "pattern": [
+    "<<",
+    "</",
+    " /"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:mangrove_blackstone_axe"
+  }
+}

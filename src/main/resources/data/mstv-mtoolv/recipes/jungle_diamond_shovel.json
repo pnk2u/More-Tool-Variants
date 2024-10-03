@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "diamond_shovels",
+  "key": {
+    "/": {
+      "item": "mstv-base:jungle_stick"
+    },
+    "<": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "<",
+    "/",
+    "/"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:jungle_diamond_shovel"
+  }
+}

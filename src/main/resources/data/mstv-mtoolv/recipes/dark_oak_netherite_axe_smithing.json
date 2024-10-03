@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "base": {
+    "item": "mstv-mtoolv:dark_oak_diamond_axe"
+  },
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:dark_oak_netherite_axe"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}

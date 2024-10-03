@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "brushes",
+  "key": {
+    "/": {
+      "item": "mstv-base:warped_stick"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "F": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "F",
+    "C",
+    "/"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:warped_brush"
+  }
+}

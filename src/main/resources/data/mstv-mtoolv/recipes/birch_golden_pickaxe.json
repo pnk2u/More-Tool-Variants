@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "golden_pickaxes",
+  "key": {
+    "/": {
+      "item": "mstv-base:birch_stick"
+    },
+    "<": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "<<<",
+    " / ",
+    " / "
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:birch_golden_pickaxe"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "mstv-mtoolv:item/spruce_blackstone_hoe"
+  }
+}
