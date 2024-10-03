@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:spruce_deepslate_shovel"
-  }
+  },
+  "show_notification": true
 }

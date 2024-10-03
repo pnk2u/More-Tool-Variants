@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:cherry_stone_pickaxe"
-  }
+  },
+  "show_notification": true
 }

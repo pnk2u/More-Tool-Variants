@@ -20,5 +20,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:acacia_brush"
-  }
+  },
+  "show_notification": true
 }

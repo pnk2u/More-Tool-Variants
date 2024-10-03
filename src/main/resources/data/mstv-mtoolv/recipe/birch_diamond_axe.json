@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:birch_diamond_axe"
-  }
+  },
+  "show_notification": true
 }

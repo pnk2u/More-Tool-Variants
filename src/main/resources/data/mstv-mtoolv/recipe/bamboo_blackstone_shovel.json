@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:bamboo_blackstone_shovel"
-  }
+  },
+  "show_notification": true
 }

@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:jungle_stone_hoe"
-  }
+  },
+  "show_notification": true
 }

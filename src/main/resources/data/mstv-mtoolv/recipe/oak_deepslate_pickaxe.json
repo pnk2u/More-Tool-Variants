@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:oak_deepslate_pickaxe"
-  }
+  },
+  "show_notification": true
 }

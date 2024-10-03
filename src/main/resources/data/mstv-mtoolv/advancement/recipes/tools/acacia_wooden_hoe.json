@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_hoe_head_material"
+      "has_hoe_head_material",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "mstv-mtoolv:acacia_wooden_hoe"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -20,5 +20,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:spruce_brush"
-  }
+  },
+  "show_notification": true
 }

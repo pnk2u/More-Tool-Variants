@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:spruce_diamond_hoe"
-  }
+  },
+  "show_notification": true
 }

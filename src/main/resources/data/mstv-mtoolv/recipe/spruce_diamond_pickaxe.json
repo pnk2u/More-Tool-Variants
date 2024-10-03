@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:spruce_diamond_pickaxe"
-  }
+  },
+  "show_notification": true
 }

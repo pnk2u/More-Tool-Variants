@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_axe_head_material"
+      "has_axe_head_material",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "mstv-mtoolv:cherry_wooden_axe"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

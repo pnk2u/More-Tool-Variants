@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:warped_blackstone_pickaxe"
-  }
+  },
+  "show_notification": true
 }

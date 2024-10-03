@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:mangrove_deepslate_shovel"
-  }
+  },
+  "show_notification": true
 }

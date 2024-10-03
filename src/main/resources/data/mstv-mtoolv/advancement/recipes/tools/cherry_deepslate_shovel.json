@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_shovel_blade_material"
+      "has_shovel_blade_material",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "mstv-mtoolv:cherry_deepslate_shovel"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

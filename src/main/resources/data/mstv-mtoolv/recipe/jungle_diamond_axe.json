@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:jungle_diamond_axe"
-  }
+  },
+  "show_notification": true
 }

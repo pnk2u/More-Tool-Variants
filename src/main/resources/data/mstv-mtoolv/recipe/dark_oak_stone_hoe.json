@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:dark_oak_stone_hoe"
-  }
+  },
+  "show_notification": true
 }

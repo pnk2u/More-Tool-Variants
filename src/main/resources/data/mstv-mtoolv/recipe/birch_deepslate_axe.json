@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:birch_deepslate_axe"
-  }
+  },
+  "show_notification": true
 }

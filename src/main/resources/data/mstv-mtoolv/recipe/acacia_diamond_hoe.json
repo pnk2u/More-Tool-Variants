@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:acacia_diamond_hoe"
-  }
+  },
+  "show_notification": true
 }

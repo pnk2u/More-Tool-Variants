@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:oak_blackstone_axe"
-  }
+  },
+  "show_notification": true
 }

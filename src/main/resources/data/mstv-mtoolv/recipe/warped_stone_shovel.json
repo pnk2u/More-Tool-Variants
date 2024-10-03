@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:warped_stone_shovel"
-  }
+  },
+  "show_notification": true
 }

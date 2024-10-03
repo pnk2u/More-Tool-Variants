@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:dark_oak_stone_pickaxe"
-  }
+  },
+  "show_notification": true
 }

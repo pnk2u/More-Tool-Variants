@@ -20,5 +20,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:bamboo_brush"
-  }
+  },
+  "show_notification": true
 }

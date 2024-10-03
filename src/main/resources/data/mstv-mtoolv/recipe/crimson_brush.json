@@ -20,5 +20,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:crimson_brush"
-  }
+  },
+  "show_notification": true
 }

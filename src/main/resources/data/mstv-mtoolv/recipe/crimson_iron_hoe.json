@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:crimson_iron_hoe"
-  }
+  },
+  "show_notification": true
 }

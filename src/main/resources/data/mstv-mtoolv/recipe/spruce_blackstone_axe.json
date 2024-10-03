@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:spruce_blackstone_axe"
-  }
+  },
+  "show_notification": true
 }

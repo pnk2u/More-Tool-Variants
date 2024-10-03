@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:dark_oak_golden_shovel"
-  }
+  },
+  "show_notification": true
 }

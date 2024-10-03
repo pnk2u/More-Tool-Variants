@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:acacia_wooden_pickaxe"
-  }
+  },
+  "show_notification": true
 }
