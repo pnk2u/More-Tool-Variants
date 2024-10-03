@@ -36,7 +36,7 @@ loom {
 }
 
 fabricApi {
-	configureDataGeneration()
+	// configureDataGeneration()
 }
 
 dependencies {
@@ -52,7 +52,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fapi_version}"
 
 	// MStV (modImplementation datagen only -> modCompileOnly for release)
-	modImplementation files("./res/MoreStickVariants-1.2.1+1.20.1-Fabric.jar")
+	modCompileOnly files("./res/MoreStickVariants-1.2.1+1.20.1-Fabric.jar")
 }
 
 processResources {
@@ -69,7 +69,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
+	it.options.release = 17
 }
 
 java {
