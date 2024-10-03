@@ -7,8 +7,7 @@
     "item": "mstv-mtoolv:jungle_diamond_axe"
   },
   "result": {
-    "count": 1,
-    "id": "mstv-mtoolv:jungle_netherite_axe"
+    "item": "mstv-mtoolv:jungle_netherite_axe"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "mstv-base:crimson_stick"
+            "items": [
+              "mstv-base:crimson_stick"
+            ]
           }
         ]
       },

@@ -7,8 +7,7 @@
     "item": "mstv-mtoolv:warped_diamond_shovel"
   },
   "result": {
-    "count": 1,
-    "id": "mstv-mtoolv:warped_netherite_shovel"
+    "item": "mstv-mtoolv:warped_netherite_shovel"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

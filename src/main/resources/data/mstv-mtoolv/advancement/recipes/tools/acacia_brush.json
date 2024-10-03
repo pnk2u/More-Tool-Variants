@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "mstv-base:acacia_stick"
+            "items": [
+              "mstv-base:acacia_stick"
+            ]
           }
         ]
       },

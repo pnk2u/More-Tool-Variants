@@ -7,8 +7,7 @@
     "item": "mstv-mtoolv:warped_diamond_pickaxe"
   },
   "result": {
-    "count": 1,
-    "id": "mstv-mtoolv:warped_netherite_pickaxe"
+    "item": "mstv-mtoolv:warped_netherite_pickaxe"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

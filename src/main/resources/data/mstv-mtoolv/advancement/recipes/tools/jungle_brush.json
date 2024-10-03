@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "mstv-base:jungle_stick"
+            "items": [
+              "mstv-base:jungle_stick"
+            ]
           }
         ]
       },
