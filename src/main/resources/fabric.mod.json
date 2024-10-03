@@ -22,9 +22,6 @@
     ],
     "client": [
       "de.pnku.mstv_mtoolv.MoreToolVariantsClient"
-    ],
-    "fabric-datagen": [
-      "de.pnku.mstv_mtoolv.MoreToolVariantDatagen"
     ]
   },
   "depends": {

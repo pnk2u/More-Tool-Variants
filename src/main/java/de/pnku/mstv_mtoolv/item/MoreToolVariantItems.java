@@ -1,6 +1,5 @@
 package de.pnku.mstv_mtoolv.item;
 
-import de.pnku.mstv_base.MoreStickVariants;
 import de.pnku.mstv_base.item.MoreStickVariantItem;
 import de.pnku.mstv_mtoolv.MoreToolVariants;
 import net.minecraft.core.registries.BuiltInRegistries;
