@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:mangrove_golden_shovel"
-  }
+  },
+  "show_notification": true
 }

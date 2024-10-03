@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:warped_stone_pickaxe"
-  }
+  },
+  "show_notification": true
 }

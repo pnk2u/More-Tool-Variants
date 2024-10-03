@@ -4,15 +4,14 @@ import de.pnku.mstv_mtoolv.MoreToolVariants;
 import de.pnku.mstv_base.item.MoreStickVariantItem;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.recipes.RecipeBuilder;
+import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
-import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
+
 import static de.pnku.mstv_mtoolv.item.MoreToolVariantItems.*;
 
 public class MoreToolVariantRecipeGenerator extends FabricRecipeProvider {
@@ -21,7 +20,7 @@ public class MoreToolVariantRecipeGenerator extends FabricRecipeProvider {
     }
 
     @Override
-    public void buildRecipes(RecipeOutput exporter) {
+    public void buildRecipes(Consumer<FinishedRecipe> exporter) {
         for (Item axeItem : more_axes) {
             if (!more_netherite_tools.contains(axeItem)) {
             Item stickItem = more_tool_sticks.get(axeItem);

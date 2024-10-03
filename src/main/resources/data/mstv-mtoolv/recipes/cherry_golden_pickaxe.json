@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:cherry_golden_pickaxe"
-  }
+  },
+  "show_notification": true
 }

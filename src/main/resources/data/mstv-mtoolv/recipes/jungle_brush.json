@@ -20,5 +20,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:jungle_brush"
-  }
+  },
+  "show_notification": true
 }

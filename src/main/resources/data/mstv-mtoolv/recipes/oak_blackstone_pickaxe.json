@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:oak_blackstone_pickaxe"
-  }
+  },
+  "show_notification": true
 }

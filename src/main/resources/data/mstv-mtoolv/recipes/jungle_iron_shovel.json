@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:jungle_iron_shovel"
-  }
+  },
+  "show_notification": true
 }

@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:acacia_golden_shovel"
-  }
+  },
+  "show_notification": true
 }

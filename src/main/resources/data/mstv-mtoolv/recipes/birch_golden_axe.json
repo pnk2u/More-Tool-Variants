@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:birch_golden_axe"
-  }
+  },
+  "show_notification": true
 }

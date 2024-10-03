@@ -20,5 +20,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:dark_oak_brush"
-  }
+  },
+  "show_notification": true
 }

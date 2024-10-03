@@ -17,5 +17,6 @@
   ],
   "result": {
     "item": "mstv-mtoolv:jungle_golden_pickaxe"
-  }
+  },
+  "show_notification": true
 }
