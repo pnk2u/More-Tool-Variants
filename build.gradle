@@ -52,7 +52,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fapi_version}"
 
 	// MStV (modImplementation datagen only -> modCompileOnly for release)
-	modImplementation files("./res/MoreStickVariants-1.2.1+1.20.6-Fabric.jar")
+	modImplementation files("./res/MoreStickVariants-1.2.1+1.20.4-Fabric.jar")
 }
 
 processResources {
@@ -77,8 +77,8 @@ java {
 	// if it is present.
 	// If you remove this line, sources will not be generated.
 
-	sourceCompatibility = JavaVersion.VERSION_21
-	targetCompatibility = JavaVersion.VERSION_21
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
 }
 
 jar {

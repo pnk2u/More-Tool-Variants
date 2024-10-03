@@ -19,7 +19,6 @@
     "I"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:brush"
+    "item": "minecraft:brush"
   }
 }

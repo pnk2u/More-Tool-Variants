@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "mstv-base:spruce_stick"
+            "items": [
+              "mstv-base:spruce_stick"
+            ]
           }
         ]
       },

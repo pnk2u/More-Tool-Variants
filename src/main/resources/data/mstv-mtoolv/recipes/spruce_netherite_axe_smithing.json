@@ -7,8 +7,7 @@
     "item": "mstv-mtoolv:spruce_diamond_axe"
   },
   "result": {
-    "count": 1,
-    "id": "mstv-mtoolv:spruce_netherite_axe"
+    "item": "mstv-mtoolv:spruce_netherite_axe"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

@@ -16,8 +16,8 @@ import java.util.concurrent.CompletableFuture;
 import static de.pnku.mstv_mtoolv.item.MoreToolVariantItems.*;
 
 public class MoreToolVariantRecipeGenerator extends FabricRecipeProvider {
-    public MoreToolVariantRecipeGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
-        super(output, registriesFuture);
+    public MoreToolVariantRecipeGenerator(FabricDataOutput output) {
+        super(output);
     }
 
     @Override

@@ -7,8 +7,7 @@
     "item": "mstv-mtoolv:cherry_diamond_hoe"
   },
   "result": {
-    "count": 1,
-    "id": "mstv-mtoolv:cherry_netherite_hoe"
+    "item": "mstv-mtoolv:cherry_netherite_hoe"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

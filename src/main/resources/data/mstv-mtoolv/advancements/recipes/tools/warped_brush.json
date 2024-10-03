@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "mstv-base:warped_stick"
+            "items": [
+              "mstv-base:warped_stick"
+            ]
           }
         ]
       },

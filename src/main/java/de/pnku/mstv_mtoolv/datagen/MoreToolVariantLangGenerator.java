@@ -15,12 +15,12 @@ import java.util.concurrent.CompletableFuture;
 import static de.pnku.mstv_mtoolv.item.MoreToolVariantItems.*;
 
 public class MoreToolVariantLangGenerator extends FabricLanguageProvider {
-    public MoreToolVariantLangGenerator(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
-        super(dataOutput, registryLookup);
+    public MoreToolVariantLangGenerator(FabricDataOutput dataOutput) {
+        super(dataOutput);
     }
 
     @Override
-    public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(TranslationBuilder translationBuilder) {
         for (Item axeItem : more_axes) {
             Item stickItem = more_tool_sticks.get(axeItem);
             String stickWood;
