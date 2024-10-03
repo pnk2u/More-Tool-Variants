@@ -8,8 +8,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 
-import java.util.Collections;
-
 import static de.pnku.mstv_mtoolv.MoreToolVariants.LOGGER;
 import static de.pnku.mstv_mtoolv.item.MoreToolVariantItems.more_tools;
 
