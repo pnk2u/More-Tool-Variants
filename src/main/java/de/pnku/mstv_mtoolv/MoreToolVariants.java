@@ -20,7 +20,7 @@ public class MoreToolVariants implements ModInitializer {
 	}
 
 	public static ResourceLocation asId(String path) {
-		return new ResourceLocation(MOD_ID, path);
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
 	}
 
 }
