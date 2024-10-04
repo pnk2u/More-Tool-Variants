@@ -423,8 +423,8 @@ public class MoreToolVariantItems {
         registerAxeItem(ACACIA_WOODEN_AXE, ACACIA_STICK, Items.ACACIA_PLANKS, "wooden");
         registerHoeItem(ACACIA_WOODEN_HOE, ACACIA_STICK, Items.ACACIA_PLANKS, "wooden");
         registerShovelItem(ACACIA_STONE_SHOVEL, ACACIA_STICK, Items.COBBLESTONE, "stone");
-        registerAxeItem(ACACIA_STONE_AXE, ACACIA_STICK, Items.COBBLESTONE, "stone");
         registerPickaxeItem(ACACIA_STONE_PICKAXE, ACACIA_STICK, Items.COBBLESTONE, "stone");
+        registerAxeItem(ACACIA_STONE_AXE, ACACIA_STICK, Items.COBBLESTONE, "stone");
         registerHoeItem(ACACIA_STONE_HOE, ACACIA_STICK, Items.COBBLESTONE, "stone");
         registerShovelItem(ACACIA_DEEPSLATE_SHOVEL, ACACIA_STICK, Items.DEEPSLATE, "deepslate");
         registerPickaxeItem(ACACIA_DEEPSLATE_PICKAXE, ACACIA_STICK, Items.DEEPSLATE, "deepslate");
