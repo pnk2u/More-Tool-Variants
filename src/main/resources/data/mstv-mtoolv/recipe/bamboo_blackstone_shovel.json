@@ -3,12 +3,8 @@
   "category": "equipment",
   "group": "blackstone_shovels",
   "key": {
-    "/": {
-      "item": "minecraft:bamboo"
-    },
-    "<": {
-      "item": "minecraft:blackstone"
-    }
+    "/": "minecraft:bamboo",
+    "<": "minecraft:blackstone"
   },
   "pattern": [
     "<",

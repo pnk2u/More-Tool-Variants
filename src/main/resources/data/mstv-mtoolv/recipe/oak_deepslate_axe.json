@@ -3,12 +3,8 @@
   "category": "equipment",
   "group": "deepslate_axes",
   "key": {
-    "/": {
-      "item": "minecraft:stick"
-    },
-    "<": {
-      "item": "minecraft:deepslate"
-    }
+    "/": "minecraft:stick",
+    "<": "minecraft:deepslate"
   },
   "pattern": [
     "<<",

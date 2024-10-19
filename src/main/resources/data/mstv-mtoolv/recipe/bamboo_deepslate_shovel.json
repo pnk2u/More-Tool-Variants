@@ -3,12 +3,8 @@
   "category": "equipment",
   "group": "deepslate_shovels",
   "key": {
-    "/": {
-      "item": "minecraft:bamboo"
-    },
-    "<": {
-      "item": "minecraft:deepslate"
-    }
+    "/": "minecraft:bamboo",
+    "<": "minecraft:deepslate"
   },
   "pattern": [
     "<",

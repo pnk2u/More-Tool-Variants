@@ -3,6 +3,8 @@ package de.pnku.mstv_mtoolv.item;
 import de.pnku.mstv_base.item.MoreStickVariantItem;
 import de.pnku.mstv_mtoolv.MoreToolVariants;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
 import net.minecraft.core.Registry;
 
@@ -12,397 +14,435 @@ import java.util.List;
 import java.util.Map;
 
 import static de.pnku.mstv_base.item.MoreStickVariantItems.*;
+import static net.minecraft.world.item.ToolMaterial.*;
 
 
 public class MoreToolVariantItems {
 
+    public static DiggerItem createToolItem(String toolType, ToolMaterial toolMaterial, String woodType, float ToolAD, float ToolAS){
+        return createToolItem(toolType, toolMaterial, 0, woodType, ToolAD, ToolAS);
+    }
+
+    public static DiggerItem createToolItem(String toolType, ToolMaterial toolMaterial, int specialCase, String woodType, float ToolAD, float ToolAS){
+        String materialPrefix = materialPrefixFromToolMaterial(toolMaterial, specialCase);
+        Item.Properties toolProperties = new Item.Properties().setId(ResourceKey.create(Registries.ITEM, MoreToolVariants.asId(woodType + materialPrefix + "_" + toolType)));
+        if (woodType.matches("crimson|warped") || toolMaterial.equals(NETHERITE)) {
+            toolProperties = toolProperties.fireResistant();
+        }
+        switch (toolType) {
+            case "axe" -> {return new AxeItem(toolMaterial, ToolAD, ToolAS, toolProperties);}
+            case "pickaxe" -> {return new PickaxeItem(toolMaterial, ToolAD, ToolAS, toolProperties);}
+            case "hoe" -> {return new HoeItem(toolMaterial, ToolAD, ToolAS, toolProperties);}
+            case "shovel" -> {return new ShovelItem(toolMaterial, ToolAD, ToolAS, toolProperties);}
+            default -> {return null;}
+            }
+    }
+
+    public static String materialPrefixFromToolMaterial(ToolMaterial toolMaterial, int specialCase) {
+        if (toolMaterial == WOOD) {return "_wooden";}
+        else if (toolMaterial == STONE) {if (specialCase == 1) return "_deepslate"; if (specialCase == 2) return "_blackstone"; else return "_stone";}
+        else if (toolMaterial == GOLD) {return "_golden";}
+        else if (toolMaterial == IRON) {return "_iron";}
+        else if (toolMaterial == DIAMOND) {return "_diamond";}
+        else if (toolMaterial == NETHERITE) {return "_netherite";}
+        else {return "_unknownMaterialType";}
+    }
+
     // Regular Tiered Tools
         // Axes
             // TOOL: Wooden Axes
-            public static final Item ACACIA_WOODEN_AXE = new AxeItem(Tiers.WOOD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)));
-            public static final Item BAMBOO_WOODEN_AXE = new AxeItem(Tiers.WOOD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)));
-            public static final Item BIRCH_WOODEN_AXE = new AxeItem(Tiers.WOOD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)));
-            public static final Item CHERRY_WOODEN_AXE = new AxeItem(Tiers.WOOD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)));
-            public static final Item CRIMSON_WOODEN_AXE = new AxeItem(Tiers.WOOD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)).fireResistant());
-            public static final Item DARK_OAK_WOODEN_AXE = new AxeItem(Tiers.WOOD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)));
-            public static final Item JUNGLE_WOODEN_AXE = new AxeItem(Tiers.WOOD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)));
-            public static final Item MANGROVE_WOODEN_AXE = new AxeItem(Tiers.WOOD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)));
-            public static final Item SPRUCE_WOODEN_AXE = new AxeItem(Tiers.WOOD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)));
-            public static final Item WARPED_WOODEN_AXE = new AxeItem(Tiers.WOOD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)).fireResistant());
+            public static final Item ACACIA_WOODEN_AXE = createToolItem("axe", WOOD, "acacia", 6.0F, -3.2F);
+            public static final Item BAMBOO_WOODEN_AXE = createToolItem("axe", WOOD, "bamboo", 6.0F, -3.2F);
+            public static final Item BIRCH_WOODEN_AXE = createToolItem("axe", WOOD, "birch", 6.0F, -3.2F);
+            public static final Item CHERRY_WOODEN_AXE = createToolItem("axe", WOOD, "cherry", 6.0F, -3.2F);
+            public static final Item CRIMSON_WOODEN_AXE = createToolItem("axe", WOOD, "crimson", 6.0F, -3.2F);
+            public static final Item DARK_OAK_WOODEN_AXE = createToolItem("axe", WOOD, "dark_oak", 6.0F, -3.2F);
+            public static final Item JUNGLE_WOODEN_AXE = createToolItem("axe", WOOD, "jungle", 6.0F, -3.2F);
+            public static final Item MANGROVE_WOODEN_AXE = createToolItem("axe", WOOD, "mangrove", 6.0F, -3.2F);
+            public static final Item SPRUCE_WOODEN_AXE = createToolItem("axe", WOOD, "spruce", 6.0F, -3.2F);
+            public static final Item WARPED_WOODEN_AXE = createToolItem("axe", WOOD, "warped", 6.0F, -3.2F);
                 // Stone Axes
                     // TOOL: Cobblestone Axes
-                    public static final Item ACACIA_STONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item BAMBOO_STONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item BIRCH_STONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item CHERRY_STONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item CRIMSON_STONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)).fireResistant());
-                    public static final Item DARK_OAK_STONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item JUNGLE_STONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item MANGROVE_STONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item SPRUCE_STONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item WARPED_STONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)).fireResistant());
+                    public static final Item ACACIA_STONE_AXE = createToolItem("axe", STONE, "acacia", 7.0F, -3.2F);
+                    public static final Item BAMBOO_STONE_AXE = createToolItem("axe", STONE, "bamboo", 7.0F, -3.2F);
+                    public static final Item BIRCH_STONE_AXE = createToolItem("axe", STONE, "birch", 7.0F, -3.2F);
+                    public static final Item CHERRY_STONE_AXE = createToolItem("axe", STONE, "cherry", 7.0F, -3.2F);
+                    public static final Item CRIMSON_STONE_AXE = createToolItem("axe", STONE, "crimson", 7.0F, -3.2F);
+                    public static final Item DARK_OAK_STONE_AXE = createToolItem("axe", STONE, "dark_oak", 7.0F, -3.2F);
+                    public static final Item JUNGLE_STONE_AXE = createToolItem("axe", STONE, "jungle", 7.0F, -3.2F);
+                    public static final Item MANGROVE_STONE_AXE = createToolItem("axe", STONE, "mangrove", 7.0F, -3.2F);
+                    public static final Item SPRUCE_STONE_AXE = createToolItem("axe", STONE, "spruce", 7.0F, -3.2F);
+                    public static final Item WARPED_STONE_AXE = createToolItem("axe", STONE, "warped", 7.0F, -3.2F);
                     // TOOL: Deepslate Axes
-                    public static final Item ACACIA_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item BAMBOO_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item BIRCH_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item CHERRY_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item CRIMSON_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)).fireResistant());
-                    public static final Item DARK_OAK_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item JUNGLE_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item MANGROVE_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item OAK_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item SPRUCE_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item WARPED_DEEPSLATE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)).fireResistant());
+                    public static final Item ACACIA_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "acacia", 7.0F, -3.2F);
+                    public static final Item BAMBOO_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "bamboo", 7.0F, -3.2F);
+                    public static final Item BIRCH_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "birch", 7.0F, -3.2F);
+                    public static final Item CHERRY_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "cherry", 7.0F, -3.2F);
+                    public static final Item CRIMSON_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "crimson", 7.0F, -3.2F);
+                    public static final Item DARK_OAK_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "dark_oak", 7.0F, -3.2F);
+                    public static final Item JUNGLE_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "jungle", 7.0F, -3.2F);
+                    public static final Item MANGROVE_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "mangrove", 7.0F, -3.2F);
+                    public static final Item OAK_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "oak", 7.0F, -3.2F);
+                    public static final Item SPRUCE_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "spruce", 7.0F, -3.2F);
+                    public static final Item WARPED_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "warped", 7.0F, -3.2F);
                     // TOOL: Blackstone Axes
-                    public static final Item ACACIA_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item BAMBOO_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item BIRCH_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item CHERRY_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item CRIMSON_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)).fireResistant());
-                    public static final Item DARK_OAK_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item JUNGLE_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item MANGROVE_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item OAK_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item SPRUCE_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)));
-                    public static final Item WARPED_BLACKSTONE_AXE = new AxeItem(Tiers.STONE, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.STONE, 7.0F, -3.2F)).fireResistant());
+                    public static final Item ACACIA_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "acacia", 7.0F, -3.2F);
+                    public static final Item BAMBOO_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "bamboo", 7.0F, -3.2F);
+                    public static final Item BIRCH_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "birch", 7.0F, -3.2F);
+                    public static final Item CHERRY_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "cherry", 7.0F, -3.2F);
+                    public static final Item CRIMSON_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "crimson", 7.0F, -3.2F);
+                    public static final Item DARK_OAK_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "dark_oak", 7.0F, -3.2F);
+                    public static final Item JUNGLE_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "jungle", 7.0F, -3.2F);
+                    public static final Item MANGROVE_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "mangrove", 7.0F, -3.2F);
+                    public static final Item OAK_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "oak", 7.0F, -3.2F);
+                    public static final Item SPRUCE_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "spruce", 7.0F, -3.2F);
+                    public static final Item WARPED_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "warped", 7.0F, -3.2F);
             // TOOL: Golden Axes
-            public static final Item ACACIA_GOLDEN_AXE = new AxeItem(Tiers.GOLD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.GOLD, 6.0F, -3.0F)));
-            public static final Item BAMBOO_GOLDEN_AXE = new AxeItem(Tiers.GOLD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.GOLD, 6.0F, -3.0F)));
-            public static final Item BIRCH_GOLDEN_AXE = new AxeItem(Tiers.GOLD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.GOLD, 6.0F, -3.0F)));
-            public static final Item CHERRY_GOLDEN_AXE = new AxeItem(Tiers.GOLD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.GOLD, 6.0F, -3.0F)));
-            public static final Item CRIMSON_GOLDEN_AXE = new AxeItem(Tiers.GOLD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.GOLD, 6.0F, -3.0F)).fireResistant());
-            public static final Item DARK_OAK_GOLDEN_AXE = new AxeItem(Tiers.GOLD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.GOLD, 6.0F, -3.0F)));
-            public static final Item JUNGLE_GOLDEN_AXE = new AxeItem(Tiers.GOLD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.GOLD, 6.0F, -3.0F)));
-            public static final Item MANGROVE_GOLDEN_AXE = new AxeItem(Tiers.GOLD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.GOLD, 6.0F, -3.0F)));
-            public static final Item SPRUCE_GOLDEN_AXE = new AxeItem(Tiers.GOLD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.GOLD, 6.0F, -3.0F)));
-            public static final Item WARPED_GOLDEN_AXE = new AxeItem(Tiers.GOLD, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.GOLD, 6.0F, -3.0F)).fireResistant());
+            public static final Item ACACIA_GOLDEN_AXE = createToolItem("axe", GOLD, "acacia", 6.0F, -3.0F);
+            public static final Item BAMBOO_GOLDEN_AXE = createToolItem("axe", GOLD, "bamboo", 6.0F, -3.0F);
+            public static final Item BIRCH_GOLDEN_AXE = createToolItem("axe", GOLD, "birch", 6.0F, -3.0F);
+            public static final Item CHERRY_GOLDEN_AXE = createToolItem("axe", GOLD, "cherry", 6.0F, -3.0F);
+            public static final Item CRIMSON_GOLDEN_AXE = createToolItem("axe", GOLD, "crimson", 6.0F, -3.0F);
+            public static final Item DARK_OAK_GOLDEN_AXE = createToolItem("axe", GOLD, "dark_oak", 6.0F, -3.0F);
+            public static final Item JUNGLE_GOLDEN_AXE = createToolItem("axe", GOLD, "jungle", 6.0F, -3.0F);
+            public static final Item MANGROVE_GOLDEN_AXE = createToolItem("axe", GOLD, "mangrove", 6.0F, -3.0F);
+            public static final Item SPRUCE_GOLDEN_AXE = createToolItem("axe", GOLD, "spruce", 6.0F, -3.0F);
+            public static final Item WARPED_GOLDEN_AXE = createToolItem("axe", GOLD, "warped", 6.0F, -3.0F);
             // TOOL: Iron Axes
-            public static final Item ACACIA_IRON_AXE = new AxeItem(Tiers.IRON, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)));
-            public static final Item BAMBOO_IRON_AXE = new AxeItem(Tiers.IRON, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)));
-            public static final Item BIRCH_IRON_AXE = new AxeItem(Tiers.IRON, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)));
-            public static final Item CHERRY_IRON_AXE = new AxeItem(Tiers.IRON, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)));
-            public static final Item CRIMSON_IRON_AXE = new AxeItem(Tiers.IRON, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)).fireResistant());
-            public static final Item DARK_OAK_IRON_AXE = new AxeItem(Tiers.IRON, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)));
-            public static final Item JUNGLE_IRON_AXE = new AxeItem(Tiers.IRON, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)));
-            public static final Item MANGROVE_IRON_AXE = new AxeItem(Tiers.IRON, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)));
-            public static final Item SPRUCE_IRON_AXE = new AxeItem(Tiers.IRON, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)));
-            public static final Item WARPED_IRON_AXE = new AxeItem(Tiers.IRON, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)).fireResistant());
+            public static final Item ACACIA_IRON_AXE = createToolItem("axe", IRON, "acacia", 6.0F, -3.1F);
+            public static final Item BAMBOO_IRON_AXE = createToolItem("axe", IRON, "bamboo", 6.0F, -3.1F);
+            public static final Item BIRCH_IRON_AXE = createToolItem("axe", IRON, "birch", 6.0F, -3.1F);
+            public static final Item CHERRY_IRON_AXE = createToolItem("axe", IRON, "cherry", 6.0F, -3.1F);
+            public static final Item CRIMSON_IRON_AXE = createToolItem("axe", IRON, "crimson", 6.0F, -3.1F);
+            public static final Item DARK_OAK_IRON_AXE = createToolItem("axe", IRON, "dark_oak", 6.0F, -3.1F);
+            public static final Item JUNGLE_IRON_AXE = createToolItem("axe", IRON, "jungle", 6.0F, -3.1F);
+            public static final Item MANGROVE_IRON_AXE = createToolItem("axe", IRON, "mangrove", 6.0F, -3.1F);
+            public static final Item SPRUCE_IRON_AXE = createToolItem("axe", IRON, "spruce", 6.0F, -3.1F);
+            public static final Item WARPED_IRON_AXE = createToolItem("axe", IRON, "warped", 6.0F, -3.1F);
             // TOOL: Diamond Axes
-            public static final Item ACACIA_DIAMOND_AXE = new AxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.DIAMOND, 5.0F, -3.0F)));
-            public static final Item BAMBOO_DIAMOND_AXE = new AxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.DIAMOND, 5.0F, -3.0F)));
-            public static final Item BIRCH_DIAMOND_AXE = new AxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.DIAMOND, 5.0F, -3.0F)));
-            public static final Item CHERRY_DIAMOND_AXE = new AxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.DIAMOND, 5.0F, -3.0F)));
-            public static final Item CRIMSON_DIAMOND_AXE = new AxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.DIAMOND, 5.0F, -3.0F)).fireResistant());
-            public static final Item DARK_OAK_DIAMOND_AXE = new AxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.DIAMOND, 5.0F, -3.0F)));
-            public static final Item JUNGLE_DIAMOND_AXE = new AxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.DIAMOND, 5.0F, -3.0F)));
-            public static final Item MANGROVE_DIAMOND_AXE = new AxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.DIAMOND, 5.0F, -3.0F)));
-            public static final Item SPRUCE_DIAMOND_AXE = new AxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.DIAMOND, 5.0F, -3.0F)));
-            public static final Item WARPED_DIAMOND_AXE = new AxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(AxeItem.createAttributes(Tiers.DIAMOND, 5.0F, -3.0F)).fireResistant());
+            public static final Item ACACIA_DIAMOND_AXE = createToolItem("axe", DIAMOND, "acacia", 5.0F, -3.0F);
+            public static final Item BAMBOO_DIAMOND_AXE = createToolItem("axe", DIAMOND, "bamboo", 5.0F, -3.0F);
+            public static final Item BIRCH_DIAMOND_AXE = createToolItem("axe", DIAMOND, "birch", 5.0F, -3.0F);
+            public static final Item CHERRY_DIAMOND_AXE = createToolItem("axe", DIAMOND, "cherry", 5.0F, -3.0F);
+            public static final Item CRIMSON_DIAMOND_AXE = createToolItem("axe", DIAMOND, "crimson", 5.0F, -3.0F);
+            public static final Item DARK_OAK_DIAMOND_AXE = createToolItem("axe", DIAMOND, "dark_oak", 5.0F, -3.0F);
+            public static final Item JUNGLE_DIAMOND_AXE = createToolItem("axe", DIAMOND, "jungle", 5.0F, -3.0F);
+            public static final Item MANGROVE_DIAMOND_AXE = createToolItem("axe", DIAMOND, "mangrove", 5.0F, -3.0F);
+            public static final Item SPRUCE_DIAMOND_AXE = createToolItem("axe", DIAMOND, "spruce", 5.0F, -3.0F);
+            public static final Item WARPED_DIAMOND_AXE = createToolItem("axe", DIAMOND, "warped", 5.0F, -3.0F);
             // TOOL: Netherite Axes
-            public static final Item ACACIA_NETHERITE_AXE = new AxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 5.0F, -3.0F)));
-            public static final Item BAMBOO_NETHERITE_AXE = new AxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 5.0F, -3.0F)));
-            public static final Item BIRCH_NETHERITE_AXE = new AxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 5.0F, -3.0F)));
-            public static final Item CHERRY_NETHERITE_AXE = new AxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 5.0F, -3.0F)));
-            public static final Item CRIMSON_NETHERITE_AXE = new AxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 5.0F, -3.0F)));
-            public static final Item DARK_OAK_NETHERITE_AXE = new AxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 5.0F, -3.0F)));
-            public static final Item JUNGLE_NETHERITE_AXE = new AxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 5.0F, -3.0F)));
-            public static final Item MANGROVE_NETHERITE_AXE = new AxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 5.0F, -3.0F)));
-            public static final Item SPRUCE_NETHERITE_AXE = new AxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 5.0F, -3.0F)));
-            public static final Item WARPED_NETHERITE_AXE = new AxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 5.0F, -3.0F)));
+            public static final Item ACACIA_NETHERITE_AXE = createToolItem("axe", NETHERITE, "acacia", 5.0F, -3.0F);
+            public static final Item BAMBOO_NETHERITE_AXE = createToolItem("axe", NETHERITE, "bamboo", 5.0F, -3.0F);
+            public static final Item BIRCH_NETHERITE_AXE = createToolItem("axe", NETHERITE, "birch", 5.0F, -3.0F);
+            public static final Item CHERRY_NETHERITE_AXE = createToolItem("axe", NETHERITE, "cherry", 5.0F, -3.0F);
+            public static final Item CRIMSON_NETHERITE_AXE = createToolItem("axe", NETHERITE, "crimson", 5.0F, -3.0F);
+            public static final Item DARK_OAK_NETHERITE_AXE = createToolItem("axe", NETHERITE, "dark_oak", 5.0F, -3.0F);
+            public static final Item JUNGLE_NETHERITE_AXE = createToolItem("axe", NETHERITE, "jungle", 5.0F, -3.0F);
+            public static final Item MANGROVE_NETHERITE_AXE = createToolItem("axe", NETHERITE, "mangrove", 5.0F, -3.0F);
+            public static final Item SPRUCE_NETHERITE_AXE = createToolItem("axe", NETHERITE, "spruce", 5.0F, -3.0F);
+            public static final Item WARPED_NETHERITE_AXE = createToolItem("axe", NETHERITE, "warped", 5.0F, -3.0F);
 
 
 
         // Pickaxes
             // TOOL: Wooden Pickaxes
-            public static final Item ACACIA_WOODEN_PICKAXE = new PickaxeItem(Tiers.WOOD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.WOOD, 1.0F, -2.8F)));
-            public static final Item BAMBOO_WOODEN_PICKAXE = new PickaxeItem(Tiers.WOOD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.WOOD, 1.0F, -2.8F)));
-            public static final Item BIRCH_WOODEN_PICKAXE = new PickaxeItem(Tiers.WOOD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.WOOD, 1.0F, -2.8F)));
-            public static final Item CHERRY_WOODEN_PICKAXE = new PickaxeItem(Tiers.WOOD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.WOOD, 1.0F, -2.8F)));
-            public static final Item CRIMSON_WOODEN_PICKAXE = new PickaxeItem(Tiers.WOOD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.WOOD, 1.0F, -2.8F)).fireResistant());
-            public static final Item DARK_OAK_WOODEN_PICKAXE = new PickaxeItem(Tiers.WOOD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.WOOD, 1.0F, -2.8F)));
-            public static final Item JUNGLE_WOODEN_PICKAXE = new PickaxeItem(Tiers.WOOD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.WOOD, 1.0F, -2.8F)));
-            public static final Item MANGROVE_WOODEN_PICKAXE = new PickaxeItem(Tiers.WOOD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.WOOD, 1.0F, -2.8F)));
-            public static final Item SPRUCE_WOODEN_PICKAXE = new PickaxeItem(Tiers.WOOD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.WOOD, 1.0F, -2.8F)));
-            public static final Item WARPED_WOODEN_PICKAXE = new PickaxeItem(Tiers.WOOD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.WOOD, 1.0F, -2.8F)).fireResistant());
+            public static final Item ACACIA_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "acacia", 1.0F, -2.8F);
+            public static final Item BAMBOO_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "bamboo", 1.0F, -2.8F);
+            public static final Item BIRCH_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "birch", 1.0F, -2.8F);
+            public static final Item CHERRY_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "cherry", 1.0F, -2.8F);
+            public static final Item CRIMSON_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "crimson", 1.0F, -2.8F);
+            public static final Item DARK_OAK_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "dark_oak", 1.0F, -2.8F);
+            public static final Item JUNGLE_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "jungle", 1.0F, -2.8F);
+            public static final Item MANGROVE_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "mangrove", 1.0F, -2.8F);
+            public static final Item SPRUCE_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "spruce", 1.0F, -2.8F);
+            public static final Item WARPED_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "warped", 1.0F, -2.8F);
                 // Stone Pickaxes
                     // TOOL: Cobblestone Pickaxes
-                    public static final Item ACACIA_STONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item BAMBOO_STONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item BIRCH_STONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item CHERRY_STONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item CRIMSON_STONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)).fireResistant());
-                    public static final Item DARK_OAK_STONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item JUNGLE_STONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item MANGROVE_STONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item SPRUCE_STONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item WARPED_STONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)).fireResistant());
+                    public static final Item ACACIA_STONE_PICKAXE = createToolItem("pickaxe", STONE, "acacia", 1.0F, -2.8F);
+                    public static final Item BAMBOO_STONE_PICKAXE = createToolItem("pickaxe", STONE, "bamboo", 1.0F, -2.8F);
+                    public static final Item BIRCH_STONE_PICKAXE = createToolItem("pickaxe", STONE, "birch", 1.0F, -2.8F);
+                    public static final Item CHERRY_STONE_PICKAXE = createToolItem("pickaxe", STONE, "cherry", 1.0F, -2.8F);
+                    public static final Item CRIMSON_STONE_PICKAXE = createToolItem("pickaxe", STONE, "crimson", 1.0F, -2.8F);
+                    public static final Item DARK_OAK_STONE_PICKAXE = createToolItem("pickaxe", STONE, "dark_oak", 1.0F, -2.8F);
+                    public static final Item JUNGLE_STONE_PICKAXE = createToolItem("pickaxe", STONE, "jungle", 1.0F, -2.8F);
+                    public static final Item MANGROVE_STONE_PICKAXE = createToolItem("pickaxe", STONE, "mangrove", 1.0F, -2.8F);
+                    public static final Item SPRUCE_STONE_PICKAXE = createToolItem("pickaxe", STONE, "spruce", 1.0F, -2.8F);
+                    public static final Item WARPED_STONE_PICKAXE = createToolItem("pickaxe", STONE, "warped", 1.0F, -2.8F);
                     // TOOL: Deepslate Pickaxes
-                    public static final Item ACACIA_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item BAMBOO_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item BIRCH_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item CHERRY_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item CRIMSON_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)).fireResistant());
-                    public static final Item DARK_OAK_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item JUNGLE_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item MANGROVE_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item OAK_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item SPRUCE_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item WARPED_DEEPSLATE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)).fireResistant());
+                    public static final Item ACACIA_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "acacia", 1.0F, -2.8F);
+                    public static final Item BAMBOO_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "bamboo", 1.0F, -2.8F);
+                    public static final Item BIRCH_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "birch", 1.0F, -2.8F);
+                    public static final Item CHERRY_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "cherry", 1.0F, -2.8F);
+                    public static final Item CRIMSON_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "crimson", 1.0F, -2.8F);
+                    public static final Item DARK_OAK_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "dark_oak", 1.0F, -2.8F);
+                    public static final Item JUNGLE_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "jungle", 1.0F, -2.8F);
+                    public static final Item MANGROVE_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "mangrove", 1.0F, -2.8F);
+                    public static final Item OAK_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "oak", 1.0F, -2.8F);
+                    public static final Item SPRUCE_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "spruce", 1.0F, -2.8F);
+                    public static final Item WARPED_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "warped", 1.0F, -2.8F);
                     // TOOL: Blackstone Pickaxes
-                    public static final Item ACACIA_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item BAMBOO_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item BIRCH_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item CHERRY_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item CRIMSON_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)).fireResistant());
-                    public static final Item DARK_OAK_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item JUNGLE_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item MANGROVE_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item OAK_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item SPRUCE_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)));
-                    public static final Item WARPED_BLACKSTONE_PICKAXE = new PickaxeItem(Tiers.STONE, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.STONE, 1.0F, -2.8F)).fireResistant());
+                    public static final Item ACACIA_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "acacia", 1.0F, -2.8F);
+                    public static final Item BAMBOO_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "bamboo", 1.0F, -2.8F);
+                    public static final Item BIRCH_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "birch", 1.0F, -2.8F);
+                    public static final Item CHERRY_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "cherry", 1.0F, -2.8F);
+                    public static final Item CRIMSON_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "crimson", 1.0F, -2.8F);
+                    public static final Item DARK_OAK_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "dark_oak", 1.0F, -2.8F);
+                    public static final Item JUNGLE_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "jungle", 1.0F, -2.8F);
+                    public static final Item MANGROVE_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "mangrove", 1.0F, -2.8F);
+                    public static final Item OAK_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "oak", 1.0F, -2.8F);
+                    public static final Item SPRUCE_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "spruce", 1.0F, -2.8F);
+                    public static final Item WARPED_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "warped", 1.0F, -2.8F);
             // TOOL: Golden Pickaxes
-            public static final Item ACACIA_GOLDEN_PICKAXE = new PickaxeItem(Tiers.GOLD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.GOLD, 1.0F, -2.8F)));
-            public static final Item BAMBOO_GOLDEN_PICKAXE = new PickaxeItem(Tiers.GOLD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.GOLD, 1.0F, -2.8F)));
-            public static final Item BIRCH_GOLDEN_PICKAXE = new PickaxeItem(Tiers.GOLD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.GOLD, 1.0F, -2.8F)));
-            public static final Item CHERRY_GOLDEN_PICKAXE = new PickaxeItem(Tiers.GOLD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.GOLD, 1.0F, -2.8F)));
-            public static final Item CRIMSON_GOLDEN_PICKAXE = new PickaxeItem(Tiers.GOLD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.GOLD, 1.0F, -2.8F)).fireResistant());
-            public static final Item DARK_OAK_GOLDEN_PICKAXE = new PickaxeItem(Tiers.GOLD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.GOLD, 1.0F, -2.8F)));
-            public static final Item JUNGLE_GOLDEN_PICKAXE = new PickaxeItem(Tiers.GOLD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.GOLD, 1.0F, -2.8F)));
-            public static final Item MANGROVE_GOLDEN_PICKAXE = new PickaxeItem(Tiers.GOLD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.GOLD, 1.0F, -2.8F)));
-            public static final Item SPRUCE_GOLDEN_PICKAXE = new PickaxeItem(Tiers.GOLD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.GOLD, 1.0F, -2.8F)));
-            public static final Item WARPED_GOLDEN_PICKAXE = new PickaxeItem(Tiers.GOLD, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.GOLD, 1.0F, -2.8F)).fireResistant());
+            public static final Item ACACIA_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "acacia", 1.0F, -2.8F);
+            public static final Item BAMBOO_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "bamboo", 1.0F, -2.8F);
+            public static final Item BIRCH_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "birch", 1.0F, -2.8F);
+            public static final Item CHERRY_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "cherry", 1.0F, -2.8F);
+            public static final Item CRIMSON_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "crimson", 1.0F, -2.8F);
+            public static final Item DARK_OAK_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "dark_oak", 1.0F, -2.8F);
+            public static final Item JUNGLE_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "jungle", 1.0F, -2.8F);
+            public static final Item MANGROVE_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "mangrove", 1.0F, -2.8F);
+            public static final Item SPRUCE_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "spruce", 1.0F, -2.8F);
+            public static final Item WARPED_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "warped", 1.0F, -2.8F);
             // TOOL: Iron Pickaxes
-            public static final Item ACACIA_IRON_PICKAXE = new PickaxeItem(Tiers.IRON, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.IRON, 1.0F, -2.8F)));
-            public static final Item BAMBOO_IRON_PICKAXE = new PickaxeItem(Tiers.IRON, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.IRON, 1.0F, -2.8F)));
-            public static final Item BIRCH_IRON_PICKAXE = new PickaxeItem(Tiers.IRON, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.IRON, 1.0F, -2.8F)));
-            public static final Item CHERRY_IRON_PICKAXE = new PickaxeItem(Tiers.IRON, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.IRON, 1.0F, -2.8F)));
-            public static final Item CRIMSON_IRON_PICKAXE = new PickaxeItem(Tiers.IRON, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.IRON, 1.0F, -2.8F)).fireResistant());
-            public static final Item DARK_OAK_IRON_PICKAXE = new PickaxeItem(Tiers.IRON, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.IRON, 1.0F, -2.8F)));
-            public static final Item JUNGLE_IRON_PICKAXE = new PickaxeItem(Tiers.IRON, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.IRON, 1.0F, -2.8F)));
-            public static final Item MANGROVE_IRON_PICKAXE = new PickaxeItem(Tiers.IRON, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.IRON, 1.0F, -2.8F)));
-            public static final Item SPRUCE_IRON_PICKAXE = new PickaxeItem(Tiers.IRON, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.IRON, 1.0F, -2.8F)));
-            public static final Item WARPED_IRON_PICKAXE = new PickaxeItem(Tiers.IRON, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.IRON, 1.0F, -2.8F)).fireResistant());
+            public static final Item ACACIA_IRON_PICKAXE = createToolItem("pickaxe", IRON, "acacia", 1.0F, -2.8F);
+            public static final Item BAMBOO_IRON_PICKAXE = createToolItem("pickaxe", IRON, "bamboo", 1.0F, -2.8F);
+            public static final Item BIRCH_IRON_PICKAXE = createToolItem("pickaxe", IRON, "birch", 1.0F, -2.8F);
+            public static final Item CHERRY_IRON_PICKAXE = createToolItem("pickaxe", IRON, "cherry", 1.0F, -2.8F);
+            public static final Item CRIMSON_IRON_PICKAXE = createToolItem("pickaxe", IRON, "crimson", 1.0F, -2.8F);
+            public static final Item DARK_OAK_IRON_PICKAXE = createToolItem("pickaxe", IRON, "dark_oak", 1.0F, -2.8F);
+            public static final Item JUNGLE_IRON_PICKAXE = createToolItem("pickaxe", IRON, "jungle", 1.0F, -2.8F);
+            public static final Item MANGROVE_IRON_PICKAXE = createToolItem("pickaxe", IRON, "mangrove", 1.0F, -2.8F);
+            public static final Item SPRUCE_IRON_PICKAXE = createToolItem("pickaxe", IRON, "spruce", 1.0F, -2.8F);
+            public static final Item WARPED_IRON_PICKAXE = createToolItem("pickaxe", IRON, "warped", 1.0F, -2.8F);
             // TOOL: Diamond Pickaxes
-            public static final Item ACACIA_DIAMOND_PICKAXE = new PickaxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.DIAMOND, 1.0F, -2.8F)));
-            public static final Item BAMBOO_DIAMOND_PICKAXE = new PickaxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.DIAMOND, 1.0F, -2.8F)));
-            public static final Item BIRCH_DIAMOND_PICKAXE = new PickaxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.DIAMOND, 1.0F, -2.8F)));
-            public static final Item CHERRY_DIAMOND_PICKAXE = new PickaxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.DIAMOND, 1.0F, -2.8F)));
-            public static final Item CRIMSON_DIAMOND_PICKAXE = new PickaxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.DIAMOND, 1.0F, -2.8F)).fireResistant());
-            public static final Item DARK_OAK_DIAMOND_PICKAXE = new PickaxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.DIAMOND, 1.0F, -2.8F)));
-            public static final Item JUNGLE_DIAMOND_PICKAXE = new PickaxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.DIAMOND, 1.0F, -2.8F)));
-            public static final Item MANGROVE_DIAMOND_PICKAXE = new PickaxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.DIAMOND, 1.0F, -2.8F)));
-            public static final Item SPRUCE_DIAMOND_PICKAXE = new PickaxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.DIAMOND, 1.0F, -2.8F)));
-            public static final Item WARPED_DIAMOND_PICKAXE = new PickaxeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(PickaxeItem.createAttributes(Tiers.DIAMOND, 1.0F, -2.8F)).fireResistant());
+            public static final Item ACACIA_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "acacia", 1.0F, -2.8F);
+            public static final Item BAMBOO_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "bamboo", 1.0F, -2.8F);
+            public static final Item BIRCH_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "birch", 1.0F, -2.8F);
+            public static final Item CHERRY_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "cherry", 1.0F, -2.8F);
+            public static final Item CRIMSON_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "crimson", 1.0F, -2.8F);
+            public static final Item DARK_OAK_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "dark_oak", 1.0F, -2.8F);
+            public static final Item JUNGLE_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "jungle", 1.0F, -2.8F);
+            public static final Item MANGROVE_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "mangrove", 1.0F, -2.8F);
+            public static final Item SPRUCE_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "spruce", 1.0F, -2.8F);
+            public static final Item WARPED_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "warped", 1.0F, -2.8F);
             // TOOL: Netherite Pickaxes
-            public static final Item ACACIA_NETHERITE_PICKAXE = new PickaxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 1.0F, -2.8F)));
-            public static final Item BAMBOO_NETHERITE_PICKAXE = new PickaxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 1.0F, -2.8F)));
-            public static final Item BIRCH_NETHERITE_PICKAXE = new PickaxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 1.0F, -2.8F)));
-            public static final Item CHERRY_NETHERITE_PICKAXE = new PickaxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 1.0F, -2.8F)));
-            public static final Item CRIMSON_NETHERITE_PICKAXE = new PickaxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 1.0F, -2.8F)));
-            public static final Item DARK_OAK_NETHERITE_PICKAXE = new PickaxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 1.0F, -2.8F)));
-            public static final Item JUNGLE_NETHERITE_PICKAXE = new PickaxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 1.0F, -2.8F)));
-            public static final Item MANGROVE_NETHERITE_PICKAXE = new PickaxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 1.0F, -2.8F)));
-            public static final Item SPRUCE_NETHERITE_PICKAXE = new PickaxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 1.0F, -2.8F)));
-            public static final Item WARPED_NETHERITE_PICKAXE = new PickaxeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 1.0F, -2.8F)));
+            public static final Item ACACIA_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "acacia", 1.0F, -2.8F);
+            public static final Item BAMBOO_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "bamboo", 1.0F, -2.8F);
+            public static final Item BIRCH_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "birch", 1.0F, -2.8F);
+            public static final Item CHERRY_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "cherry", 1.0F, -2.8F);
+            public static final Item CRIMSON_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "crimson", 1.0F, -2.8F);
+            public static final Item DARK_OAK_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "dark_oak", 1.0F, -2.8F);
+            public static final Item JUNGLE_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "jungle", 1.0F, -2.8F);
+            public static final Item MANGROVE_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "mangrove", 1.0F, -2.8F);
+            public static final Item SPRUCE_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "spruce", 1.0F, -2.8F);
+            public static final Item WARPED_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "warped", 1.0F, -2.8F);
 
 
 
         // Hoes
             // TOOL: Wooden Hoes
-            public static final Item ACACIA_WOODEN_HOE = new HoeItem(Tiers.WOOD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.WOOD, 0.0F, -3.0F)));
-            public static final Item BAMBOO_WOODEN_HOE = new HoeItem(Tiers.WOOD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.WOOD, 0.0F, -3.0F)));
-            public static final Item BIRCH_WOODEN_HOE = new HoeItem(Tiers.WOOD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.WOOD, 0.0F, -3.0F)));
-            public static final Item CHERRY_WOODEN_HOE = new HoeItem(Tiers.WOOD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.WOOD, 0.0F, -3.0F)));
-            public static final Item CRIMSON_WOODEN_HOE = new HoeItem(Tiers.WOOD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.WOOD, 0.0F, -3.0F)).fireResistant());
-            public static final Item DARK_OAK_WOODEN_HOE = new HoeItem(Tiers.WOOD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.WOOD, 0.0F, -3.0F)));
-            public static final Item JUNGLE_WOODEN_HOE = new HoeItem(Tiers.WOOD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.WOOD, 0.0F, -3.0F)));
-            public static final Item MANGROVE_WOODEN_HOE = new HoeItem(Tiers.WOOD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.WOOD, 0.0F, -3.0F)));
-            public static final Item SPRUCE_WOODEN_HOE = new HoeItem(Tiers.WOOD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.WOOD, 0.0F, -3.0F)));
-            public static final Item WARPED_WOODEN_HOE = new HoeItem(Tiers.WOOD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.WOOD, 0.0F, -3.0F)).fireResistant());
+            public static final Item ACACIA_WOODEN_HOE = createToolItem("hoe", WOOD, "acacia", 0.0F, -3.0F);
+            public static final Item BAMBOO_WOODEN_HOE = createToolItem("hoe", WOOD, "bamboo", 0.0F, -3.0F);
+            public static final Item BIRCH_WOODEN_HOE = createToolItem("hoe", WOOD, "birch", 0.0F, -3.0F);
+            public static final Item CHERRY_WOODEN_HOE = createToolItem("hoe", WOOD, "cherry", 0.0F, -3.0F);
+            public static final Item CRIMSON_WOODEN_HOE = createToolItem("hoe", WOOD, "crimson", 0.0F, -3.0F);
+            public static final Item DARK_OAK_WOODEN_HOE = createToolItem("hoe", WOOD, "dark_oak", 0.0F, -3.0F);
+            public static final Item JUNGLE_WOODEN_HOE = createToolItem("hoe", WOOD, "jungle", 0.0F, -3.0F);
+            public static final Item MANGROVE_WOODEN_HOE = createToolItem("hoe", WOOD, "mangrove", 0.0F, -3.0F);
+            public static final Item SPRUCE_WOODEN_HOE = createToolItem("hoe", WOOD, "spruce", 0.0F, -3.0F);
+            public static final Item WARPED_WOODEN_HOE = createToolItem("hoe", WOOD, "warped", 0.0F, -3.0F);
                 // Stone Hoes
                     // TOOL: Cobblestone Hoes
-                    public static final Item ACACIA_STONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item BAMBOO_STONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item BIRCH_STONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item CHERRY_STONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item CRIMSON_STONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)).fireResistant());
-                    public static final Item DARK_OAK_STONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item JUNGLE_STONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item MANGROVE_STONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item SPRUCE_STONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item WARPED_STONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)).fireResistant());
+                    public static final Item ACACIA_STONE_HOE = createToolItem("hoe", STONE, "acacia", -1.0F, -2.0F);
+                    public static final Item BAMBOO_STONE_HOE = createToolItem("hoe", STONE, "bamboo", -1.0F, -2.0F);
+                    public static final Item BIRCH_STONE_HOE = createToolItem("hoe", STONE, "birch", -1.0F, -2.0F);
+                    public static final Item CHERRY_STONE_HOE = createToolItem("hoe", STONE, "cherry", -1.0F, -2.0F);
+                    public static final Item CRIMSON_STONE_HOE = createToolItem("hoe", STONE, "crimson", -1.0F, -2.0F);
+                    public static final Item DARK_OAK_STONE_HOE = createToolItem("hoe", STONE, "dark_oak", -1.0F, -2.0F);
+                    public static final Item JUNGLE_STONE_HOE = createToolItem("hoe", STONE, "jungle", -1.0F, -2.0F);
+                    public static final Item MANGROVE_STONE_HOE = createToolItem("hoe", STONE, "mangrove", -1.0F, -2.0F);
+                    public static final Item SPRUCE_STONE_HOE = createToolItem("hoe", STONE, "spruce", -1.0F, -2.0F);
+                    public static final Item WARPED_STONE_HOE = createToolItem("hoe", STONE, "warped", -1.0F, -2.0F);
                     // TOOL: Deepslate Hoes
-                    public static final Item ACACIA_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item BAMBOO_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item BIRCH_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item CHERRY_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item CRIMSON_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)).fireResistant());
-                    public static final Item DARK_OAK_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item JUNGLE_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item MANGROVE_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item OAK_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item SPRUCE_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item WARPED_DEEPSLATE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)).fireResistant());
+                    public static final Item ACACIA_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "acacia", -1.0F, -2.0F);
+                    public static final Item BAMBOO_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "bamboo", -1.0F, -2.0F);
+                    public static final Item BIRCH_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "birch", -1.0F, -2.0F);
+                    public static final Item CHERRY_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "cherry", -1.0F, -2.0F);
+                    public static final Item CRIMSON_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "crimson", -1.0F, -2.0F);
+                    public static final Item DARK_OAK_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "dark_oak", -1.0F, -2.0F);
+                    public static final Item JUNGLE_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "jungle", -1.0F, -2.0F);
+                    public static final Item MANGROVE_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "mangrove", -1.0F, -2.0F);
+                    public static final Item OAK_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "oak", -1.0F, -2.0F);
+                    public static final Item SPRUCE_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "spruce", -1.0F, -2.0F);
+                    public static final Item WARPED_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "warped", -1.0F, -2.0F);
                     // TOOL: Blackstone Hoes
-                    public static final Item ACACIA_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item BAMBOO_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item BIRCH_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item CHERRY_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item CRIMSON_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)).fireResistant());
-                    public static final Item DARK_OAK_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item JUNGLE_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item MANGROVE_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item OAK_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item SPRUCE_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)));
-                    public static final Item WARPED_BLACKSTONE_HOE = new HoeItem(Tiers.STONE, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.STONE, -1.0F, -2.0F)).fireResistant());
+                    public static final Item ACACIA_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "acacia", -1.0F, -2.0F);
+                    public static final Item BAMBOO_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "bamboo", -1.0F, -2.0F);
+                    public static final Item BIRCH_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "birch", -1.0F, -2.0F);
+                    public static final Item CHERRY_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "cherry", -1.0F, -2.0F);
+                    public static final Item CRIMSON_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "crimson", -1.0F, -2.0F);
+                    public static final Item DARK_OAK_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "dark_oak", -1.0F, -2.0F);
+                    public static final Item JUNGLE_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "jungle", -1.0F, -2.0F);
+                    public static final Item MANGROVE_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "mangrove", -1.0F, -2.0F);
+                    public static final Item OAK_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "oak", -1.0F, -2.0F);
+                    public static final Item SPRUCE_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "spruce", -1.0F, -2.0F);
+                    public static final Item WARPED_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "warped", -1.0F, -2.0F);
             // TOOL: Golden Hoes
-            public static final Item ACACIA_GOLDEN_HOE = new HoeItem(Tiers.GOLD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.GOLD, 0.0F, -3.0F)));
-            public static final Item BAMBOO_GOLDEN_HOE = new HoeItem(Tiers.GOLD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.GOLD, 0.0F, -3.0F)));
-            public static final Item BIRCH_GOLDEN_HOE = new HoeItem(Tiers.GOLD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.GOLD, 0.0F, -3.0F)));
-            public static final Item CHERRY_GOLDEN_HOE = new HoeItem(Tiers.GOLD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.GOLD, 0.0F, -3.0F)));
-            public static final Item CRIMSON_GOLDEN_HOE = new HoeItem(Tiers.GOLD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.GOLD, 0.0F, -3.0F)).fireResistant());
-            public static final Item DARK_OAK_GOLDEN_HOE = new HoeItem(Tiers.GOLD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.GOLD, 0.0F, -3.0F)));
-            public static final Item JUNGLE_GOLDEN_HOE = new HoeItem(Tiers.GOLD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.GOLD, 0.0F, -3.0F)));
-            public static final Item MANGROVE_GOLDEN_HOE = new HoeItem(Tiers.GOLD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.GOLD, 0.0F, -3.0F)));
-            public static final Item SPRUCE_GOLDEN_HOE = new HoeItem(Tiers.GOLD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.GOLD, 0.0F, -3.0F)));
-            public static final Item WARPED_GOLDEN_HOE = new HoeItem(Tiers.GOLD, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.GOLD, 0.0F, -3.0F)).fireResistant());
+            public static final Item ACACIA_GOLDEN_HOE = createToolItem("hoe", GOLD, "acacia", 0.0F, -3.0F);
+            public static final Item BAMBOO_GOLDEN_HOE = createToolItem("hoe", GOLD, "bamboo", 0.0F, -3.0F);
+            public static final Item BIRCH_GOLDEN_HOE = createToolItem("hoe", GOLD, "birch", 0.0F, -3.0F);
+            public static final Item CHERRY_GOLDEN_HOE = createToolItem("hoe", GOLD, "cherry", 0.0F, -3.0F);
+            public static final Item CRIMSON_GOLDEN_HOE = createToolItem("hoe", GOLD, "crimson", 0.0F, -3.0F);
+            public static final Item DARK_OAK_GOLDEN_HOE = createToolItem("hoe", GOLD, "dark_oak", 0.0F, -3.0F);
+            public static final Item JUNGLE_GOLDEN_HOE = createToolItem("hoe", GOLD, "jungle", 0.0F, -3.0F);
+            public static final Item MANGROVE_GOLDEN_HOE = createToolItem("hoe", GOLD, "mangrove", 0.0F, -3.0F);
+            public static final Item SPRUCE_GOLDEN_HOE = createToolItem("hoe", GOLD, "spruce", 0.0F, -3.0F);
+            public static final Item WARPED_GOLDEN_HOE = createToolItem("hoe", GOLD, "warped", 0.0F, -3.0F);
             // TOOL: Iron Hoes
-            public static final Item ACACIA_IRON_HOE = new HoeItem(Tiers.IRON, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.IRON, -2.0F, -1.0F)));
-            public static final Item BAMBOO_IRON_HOE = new HoeItem(Tiers.IRON, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.IRON, -2.0F, -1.0F)));
-            public static final Item BIRCH_IRON_HOE = new HoeItem(Tiers.IRON, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.IRON, -2.0F, -1.0F)));
-            public static final Item CHERRY_IRON_HOE = new HoeItem(Tiers.IRON, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.IRON, -2.0F, -1.0F)));
-            public static final Item CRIMSON_IRON_HOE = new HoeItem(Tiers.IRON, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.IRON, -2.0F, -1.0F)).fireResistant());
-            public static final Item DARK_OAK_IRON_HOE = new HoeItem(Tiers.IRON, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.IRON, -2.0F, -1.0F)));
-            public static final Item JUNGLE_IRON_HOE = new HoeItem(Tiers.IRON, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.IRON, -2.0F, -1.0F)));
-            public static final Item MANGROVE_IRON_HOE = new HoeItem(Tiers.IRON, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.IRON, -2.0F, -1.0F)));
-            public static final Item SPRUCE_IRON_HOE = new HoeItem(Tiers.IRON, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.IRON, -2.0F, -1.0F)));
-            public static final Item WARPED_IRON_HOE = new HoeItem(Tiers.IRON, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.IRON, -2.0F, -1.0F)).fireResistant());
+            public static final Item ACACIA_IRON_HOE = createToolItem("hoe", IRON, "acacia", -2.0F, -1.0F);
+            public static final Item BAMBOO_IRON_HOE = createToolItem("hoe", IRON, "bamboo", -2.0F, -1.0F);
+            public static final Item BIRCH_IRON_HOE = createToolItem("hoe", IRON, "birch", -2.0F, -1.0F);
+            public static final Item CHERRY_IRON_HOE = createToolItem("hoe", IRON, "cherry", -2.0F, -1.0F);
+            public static final Item CRIMSON_IRON_HOE = createToolItem("hoe", IRON, "crimson", -2.0F, -1.0F);
+            public static final Item DARK_OAK_IRON_HOE = createToolItem("hoe", IRON, "dark_oak", -2.0F, -1.0F);
+            public static final Item JUNGLE_IRON_HOE = createToolItem("hoe", IRON, "jungle", -2.0F, -1.0F);
+            public static final Item MANGROVE_IRON_HOE = createToolItem("hoe", IRON, "mangrove", -2.0F, -1.0F);
+            public static final Item SPRUCE_IRON_HOE = createToolItem("hoe", IRON, "spruce", -2.0F, -1.0F);
+            public static final Item WARPED_IRON_HOE = createToolItem("hoe", IRON, "warped", -2.0F, -1.0F);
             // TOOL: Diamond Hoes
-            public static final Item ACACIA_DIAMOND_HOE = new HoeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.DIAMOND, -3.0F, 0.0F)));
-            public static final Item BAMBOO_DIAMOND_HOE = new HoeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.DIAMOND, -3.0F, 0.0F)));
-            public static final Item BIRCH_DIAMOND_HOE = new HoeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.DIAMOND, -3.0F, 0.0F)));
-            public static final Item CHERRY_DIAMOND_HOE = new HoeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.DIAMOND, -3.0F, 0.0F)));
-            public static final Item CRIMSON_DIAMOND_HOE = new HoeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.DIAMOND, -3.0F, 0.0F)).fireResistant());
-            public static final Item DARK_OAK_DIAMOND_HOE = new HoeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.DIAMOND, -3.0F, 0.0F)));
-            public static final Item JUNGLE_DIAMOND_HOE = new HoeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.DIAMOND, -3.0F, 0.0F)));
-            public static final Item MANGROVE_DIAMOND_HOE = new HoeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.DIAMOND, -3.0F, 0.0F)));
-            public static final Item SPRUCE_DIAMOND_HOE = new HoeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.DIAMOND, -3.0F, 0.0F)));
-            public static final Item WARPED_DIAMOND_HOE = new HoeItem(Tiers.DIAMOND, (new Item.Properties()).attributes(HoeItem.createAttributes(Tiers.DIAMOND, -3.0F, 0.0F)).fireResistant());
+            public static final Item ACACIA_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "acacia", -3.0F, 0.0F);
+            public static final Item BAMBOO_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "bamboo", -3.0F, 0.0F);
+            public static final Item BIRCH_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "birch", -3.0F, 0.0F);
+            public static final Item CHERRY_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "cherry", -3.0F, 0.0F);
+            public static final Item CRIMSON_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "crimson", -3.0F, 0.0F);
+            public static final Item DARK_OAK_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "dark_oak", -3.0F, 0.0F);
+            public static final Item JUNGLE_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "jungle", -3.0F, 0.0F);
+            public static final Item MANGROVE_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "mangrove", -3.0F, 0.0F);
+            public static final Item SPRUCE_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "spruce", -3.0F, 0.0F);
+            public static final Item WARPED_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "warped", -3.0F, 0.0F);
             // TOOL: Netherite Hoes
-            public static final Item ACACIA_NETHERITE_HOE = new HoeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
-            public static final Item BAMBOO_NETHERITE_HOE = new HoeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
-            public static final Item BIRCH_NETHERITE_HOE = new HoeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
-            public static final Item CHERRY_NETHERITE_HOE = new HoeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
-            public static final Item CRIMSON_NETHERITE_HOE = new HoeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
-            public static final Item DARK_OAK_NETHERITE_HOE = new HoeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
-            public static final Item JUNGLE_NETHERITE_HOE = new HoeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
-            public static final Item MANGROVE_NETHERITE_HOE = new HoeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
-            public static final Item SPRUCE_NETHERITE_HOE = new HoeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
-            public static final Item WARPED_NETHERITE_HOE = new HoeItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
+            public static final Item ACACIA_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "acacia", -4.0F, 0.0F);
+            public static final Item BAMBOO_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "bamboo", -4.0F, 0.0F);
+            public static final Item BIRCH_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "birch", -4.0F, 0.0F);
+            public static final Item CHERRY_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "cherry", -4.0F, 0.0F);
+            public static final Item CRIMSON_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "crimson", -4.0F, 0.0F);
+            public static final Item DARK_OAK_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "dark_oak", -4.0F, 0.0F);
+            public static final Item JUNGLE_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "jungle", -4.0F, 0.0F);
+            public static final Item MANGROVE_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "mangrove", -4.0F, 0.0F);
+            public static final Item SPRUCE_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "spruce", -4.0F, 0.0F);
+            public static final Item WARPED_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "warped", -4.0F, 0.0F);
         // Shovels
             // TOOL: Wooden Shovels
-            public static final Item ACACIA_WOODEN_SHOVEL = new ShovelItem(Tiers.WOOD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.WOOD, 1.5F, -3.0F)));
-            public static final Item BAMBOO_WOODEN_SHOVEL = new ShovelItem(Tiers.WOOD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.WOOD, 1.5F, -3.0F)));
-            public static final Item BIRCH_WOODEN_SHOVEL = new ShovelItem(Tiers.WOOD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.WOOD, 1.5F, -3.0F)));
-            public static final Item CHERRY_WOODEN_SHOVEL = new ShovelItem(Tiers.WOOD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.WOOD, 1.5F, -3.0F)));
-            public static final Item CRIMSON_WOODEN_SHOVEL = new ShovelItem(Tiers.WOOD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.WOOD, 1.5F, -3.0F)).fireResistant());
-            public static final Item DARK_OAK_WOODEN_SHOVEL = new ShovelItem(Tiers.WOOD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.WOOD, 1.5F, -3.0F)));
-            public static final Item JUNGLE_WOODEN_SHOVEL = new ShovelItem(Tiers.WOOD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.WOOD, 1.5F, -3.0F)));
-            public static final Item MANGROVE_WOODEN_SHOVEL = new ShovelItem(Tiers.WOOD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.WOOD, 1.5F, -3.0F)));
-            public static final Item SPRUCE_WOODEN_SHOVEL = new ShovelItem(Tiers.WOOD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.WOOD, 1.5F, -3.0F)));
-            public static final Item WARPED_WOODEN_SHOVEL = new ShovelItem(Tiers.WOOD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.WOOD, 1.5F, -3.0F)).fireResistant());
+            public static final Item ACACIA_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "acacia", 1.5F, -3.0F);
+            public static final Item BAMBOO_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "bamboo", 1.5F, -3.0F);
+            public static final Item BIRCH_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "birch", 1.5F, -3.0F);
+            public static final Item CHERRY_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "cherry", 1.5F, -3.0F);
+            public static final Item CRIMSON_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "crimson", 1.5F, -3.0F);
+            public static final Item DARK_OAK_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "dark_oak", 1.5F, -3.0F);
+            public static final Item JUNGLE_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "jungle", 1.5F, -3.0F);
+            public static final Item MANGROVE_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "mangrove", 1.5F, -3.0F);
+            public static final Item SPRUCE_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "spruce", 1.5F, -3.0F);
+            public static final Item WARPED_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "warped", 1.5F, -3.0F);
                 // Stone Shovels
                     // TOOL: Cobblestone Shovels
-                    public static final Item ACACIA_STONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item BAMBOO_STONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item BIRCH_STONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item CHERRY_STONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item CRIMSON_STONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)).fireResistant());
-                    public static final Item DARK_OAK_STONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item JUNGLE_STONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item MANGROVE_STONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item SPRUCE_STONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item WARPED_STONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)).fireResistant());
+                    public static final Item ACACIA_STONE_SHOVEL = createToolItem("shovel", STONE, "acacia", 1.5F, -3.0F);
+                    public static final Item BAMBOO_STONE_SHOVEL = createToolItem("shovel", STONE, "bamboo", 1.5F, -3.0F);
+                    public static final Item BIRCH_STONE_SHOVEL = createToolItem("shovel", STONE, "birch", 1.5F, -3.0F);
+                    public static final Item CHERRY_STONE_SHOVEL = createToolItem("shovel", STONE, "cherry", 1.5F, -3.0F);
+                    public static final Item CRIMSON_STONE_SHOVEL = createToolItem("shovel", STONE, "crimson", 1.5F, -3.0F);
+                    public static final Item DARK_OAK_STONE_SHOVEL = createToolItem("shovel", STONE, "dark_oak", 1.5F, -3.0F);
+                    public static final Item JUNGLE_STONE_SHOVEL = createToolItem("shovel", STONE, "jungle", 1.5F, -3.0F);
+                    public static final Item MANGROVE_STONE_SHOVEL = createToolItem("shovel", STONE, "mangrove", 1.5F, -3.0F);
+                    public static final Item SPRUCE_STONE_SHOVEL = createToolItem("shovel", STONE, "spruce", 1.5F, -3.0F);
+                    public static final Item WARPED_STONE_SHOVEL = createToolItem("shovel", STONE, "warped", 1.5F, -3.0F);
                     // TOOL: Deepslate Shovels
-                    public static final Item ACACIA_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item BAMBOO_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item BIRCH_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item CHERRY_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item CRIMSON_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)).fireResistant());
-                    public static final Item DARK_OAK_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item JUNGLE_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item MANGROVE_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item OAK_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item SPRUCE_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item WARPED_DEEPSLATE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)).fireResistant());
+                    public static final Item ACACIA_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "acacia", 1.5F, -3.0F);
+                    public static final Item BAMBOO_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "bamboo", 1.5F, -3.0F);
+                    public static final Item BIRCH_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "birch", 1.5F, -3.0F);
+                    public static final Item CHERRY_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "cherry", 1.5F, -3.0F);
+                    public static final Item CRIMSON_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "crimson", 1.5F, -3.0F);
+                    public static final Item DARK_OAK_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "dark_oak", 1.5F, -3.0F);
+                    public static final Item JUNGLE_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "jungle", 1.5F, -3.0F);
+                    public static final Item MANGROVE_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "mangrove", 1.5F, -3.0F);
+                    public static final Item OAK_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "oak", 1.5F, -3.0F);
+                    public static final Item SPRUCE_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "spruce", 1.5F, -3.0F);
+                    public static final Item WARPED_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "warped", 1.5F, -3.0F);
                     // TOOL: Blackstone Shovels
-                    public static final Item ACACIA_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item BAMBOO_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item BIRCH_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item CHERRY_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item CRIMSON_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)).fireResistant());
-                    public static final Item DARK_OAK_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item JUNGLE_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item MANGROVE_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item OAK_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item SPRUCE_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)));
-                    public static final Item WARPED_BLACKSTONE_SHOVEL = new ShovelItem(Tiers.STONE, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.STONE, 1.5F, -3.0F)).fireResistant());
+                    public static final Item ACACIA_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "acacia", 1.5F, -3.0F);
+                    public static final Item BAMBOO_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "bamboo", 1.5F, -3.0F);
+                    public static final Item BIRCH_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "birch", 1.5F, -3.0F);
+                    public static final Item CHERRY_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "cherry", 1.5F, -3.0F);
+                    public static final Item CRIMSON_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "crimson", 1.5F, -3.0F);
+                    public static final Item DARK_OAK_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "dark_oak", 1.5F, -3.0F);
+                    public static final Item JUNGLE_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "jungle", 1.5F, -3.0F);
+                    public static final Item MANGROVE_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "mangrove", 1.5F, -3.0F);
+                    public static final Item OAK_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "oak", 1.5F, -3.0F);
+                    public static final Item SPRUCE_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "spruce", 1.5F, -3.0F);
+                    public static final Item WARPED_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "warped", 1.5F, -3.0F);
             // TOOL: Golden Shovels
-            public static final Item ACACIA_GOLDEN_SHOVEL = new ShovelItem(Tiers.GOLD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.GOLD, 1.5F, -3.0F)));
-            public static final Item BAMBOO_GOLDEN_SHOVEL = new ShovelItem(Tiers.GOLD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.GOLD, 1.5F, -3.0F)));
-            public static final Item BIRCH_GOLDEN_SHOVEL = new ShovelItem(Tiers.GOLD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.GOLD, 1.5F, -3.0F)));
-            public static final Item CHERRY_GOLDEN_SHOVEL = new ShovelItem(Tiers.GOLD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.GOLD, 1.5F, -3.0F)));
-            public static final Item CRIMSON_GOLDEN_SHOVEL = new ShovelItem(Tiers.GOLD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.GOLD, 1.5F, -3.0F)).fireResistant());
-            public static final Item DARK_OAK_GOLDEN_SHOVEL = new ShovelItem(Tiers.GOLD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.GOLD, 1.5F, -3.0F)));
-            public static final Item JUNGLE_GOLDEN_SHOVEL = new ShovelItem(Tiers.GOLD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.GOLD, 1.5F, -3.0F)));
-            public static final Item MANGROVE_GOLDEN_SHOVEL = new ShovelItem(Tiers.GOLD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.GOLD, 1.5F, -3.0F)));
-            public static final Item SPRUCE_GOLDEN_SHOVEL = new ShovelItem(Tiers.GOLD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.GOLD, 1.5F, -3.0F)));
-            public static final Item WARPED_GOLDEN_SHOVEL = new ShovelItem(Tiers.GOLD, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.GOLD, 1.5F, -3.0F)).fireResistant());
+            public static final Item ACACIA_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "acacia", 1.5F, -3.0F);
+            public static final Item BAMBOO_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "bamboo", 1.5F, -3.0F);
+            public static final Item BIRCH_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "birch", 1.5F, -3.0F);
+            public static final Item CHERRY_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "cherry", 1.5F, -3.0F);
+            public static final Item CRIMSON_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "crimson", 1.5F, -3.0F);
+            public static final Item DARK_OAK_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "dark_oak", 1.5F, -3.0F);
+            public static final Item JUNGLE_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "jungle", 1.5F, -3.0F);
+            public static final Item MANGROVE_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "mangrove", 1.5F, -3.0F);
+            public static final Item SPRUCE_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "spruce", 1.5F, -3.0F);
+            public static final Item WARPED_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "warped", 1.5F, -3.0F);
             // TOOL: Iron Shovels
-            public static final Item ACACIA_IRON_SHOVEL = new ShovelItem(Tiers.IRON, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.IRON, 1.5F, -3.0F)));
-            public static final Item BAMBOO_IRON_SHOVEL = new ShovelItem(Tiers.IRON, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.IRON, 1.5F, -3.0F)));
-            public static final Item BIRCH_IRON_SHOVEL = new ShovelItem(Tiers.IRON, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.IRON, 1.5F, -3.0F)));
-            public static final Item CHERRY_IRON_SHOVEL = new ShovelItem(Tiers.IRON, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.IRON, 1.5F, -3.0F)));
-            public static final Item CRIMSON_IRON_SHOVEL = new ShovelItem(Tiers.IRON, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.IRON, 1.5F, -3.0F)).fireResistant());
-            public static final Item DARK_OAK_IRON_SHOVEL = new ShovelItem(Tiers.IRON, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.IRON, 1.5F, -3.0F)));
-            public static final Item JUNGLE_IRON_SHOVEL = new ShovelItem(Tiers.IRON, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.IRON, 1.5F, -3.0F)));
-            public static final Item MANGROVE_IRON_SHOVEL = new ShovelItem(Tiers.IRON, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.IRON, 1.5F, -3.0F)));
-            public static final Item SPRUCE_IRON_SHOVEL = new ShovelItem(Tiers.IRON, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.IRON, 1.5F, -3.0F)));
-            public static final Item WARPED_IRON_SHOVEL = new ShovelItem(Tiers.IRON, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.IRON, 1.5F, -3.0F)).fireResistant());
+            public static final Item ACACIA_IRON_SHOVEL = createToolItem("shovel", IRON, "acacia", 1.5F, -3.0F);
+            public static final Item BAMBOO_IRON_SHOVEL = createToolItem("shovel", IRON, "bamboo", 1.5F, -3.0F);
+            public static final Item BIRCH_IRON_SHOVEL = createToolItem("shovel", IRON, "birch", 1.5F, -3.0F);
+            public static final Item CHERRY_IRON_SHOVEL = createToolItem("shovel", IRON, "cherry", 1.5F, -3.0F);
+            public static final Item CRIMSON_IRON_SHOVEL = createToolItem("shovel", IRON, "crimson", 1.5F, -3.0F);
+            public static final Item DARK_OAK_IRON_SHOVEL = createToolItem("shovel", IRON, "dark_oak", 1.5F, -3.0F);
+            public static final Item JUNGLE_IRON_SHOVEL = createToolItem("shovel", IRON, "jungle", 1.5F, -3.0F);
+            public static final Item MANGROVE_IRON_SHOVEL = createToolItem("shovel", IRON, "mangrove", 1.5F, -3.0F);
+            public static final Item SPRUCE_IRON_SHOVEL = createToolItem("shovel", IRON, "spruce", 1.5F, -3.0F);
+            public static final Item WARPED_IRON_SHOVEL = createToolItem("shovel", IRON, "warped", 1.5F, -3.0F);
             // TOOL: Diamond Shovels
-            public static final Item ACACIA_DIAMOND_SHOVEL = new ShovelItem(Tiers.DIAMOND, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.DIAMOND, 1.5F, -3.0F)));
-            public static final Item BAMBOO_DIAMOND_SHOVEL = new ShovelItem(Tiers.DIAMOND, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.DIAMOND, 1.5F, -3.0F)));
-            public static final Item BIRCH_DIAMOND_SHOVEL = new ShovelItem(Tiers.DIAMOND, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.DIAMOND, 1.5F, -3.0F)));
-            public static final Item CHERRY_DIAMOND_SHOVEL = new ShovelItem(Tiers.DIAMOND, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.DIAMOND, 1.5F, -3.0F)));
-            public static final Item CRIMSON_DIAMOND_SHOVEL = new ShovelItem(Tiers.DIAMOND, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.DIAMOND, 1.5F, -3.0F)).fireResistant());
-            public static final Item DARK_OAK_DIAMOND_SHOVEL = new ShovelItem(Tiers.DIAMOND, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.DIAMOND, 1.5F, -3.0F)));
-            public static final Item JUNGLE_DIAMOND_SHOVEL = new ShovelItem(Tiers.DIAMOND, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.DIAMOND, 1.5F, -3.0F)));
-            public static final Item MANGROVE_DIAMOND_SHOVEL = new ShovelItem(Tiers.DIAMOND, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.DIAMOND, 1.5F, -3.0F)));
-            public static final Item SPRUCE_DIAMOND_SHOVEL = new ShovelItem(Tiers.DIAMOND, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.DIAMOND, 1.5F, -3.0F)));
-            public static final Item WARPED_DIAMOND_SHOVEL = new ShovelItem(Tiers.DIAMOND, (new Item.Properties()).attributes(ShovelItem.createAttributes(Tiers.DIAMOND, 1.5F, -3.0F)).fireResistant());
+            public static final Item ACACIA_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "acacia", 1.5F, -3.0F);
+            public static final Item BAMBOO_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "bamboo", 1.5F, -3.0F);
+            public static final Item BIRCH_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "birch", 1.5F, -3.0F);
+            public static final Item CHERRY_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "cherry", 1.5F, -3.0F);
+            public static final Item CRIMSON_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "crimson", 1.5F, -3.0F);
+            public static final Item DARK_OAK_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "dark_oak", 1.5F, -3.0F);
+            public static final Item JUNGLE_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "jungle", 1.5F, -3.0F);
+            public static final Item MANGROVE_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "mangrove", 1.5F, -3.0F);
+            public static final Item SPRUCE_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "spruce", 1.5F, -3.0F);
+            public static final Item WARPED_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "warped", 1.5F, -3.0F);
             // TOOL: Netherite Shovels
-            public static final Item ACACIA_NETHERITE_SHOVEL = new ShovelItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 1.5F, -3.0F)));
-            public static final Item BAMBOO_NETHERITE_SHOVEL = new ShovelItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 1.5F, -3.0F)));
-            public static final Item BIRCH_NETHERITE_SHOVEL = new ShovelItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 1.5F, -3.0F)));
-            public static final Item CHERRY_NETHERITE_SHOVEL = new ShovelItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 1.5F, -3.0F)));
-            public static final Item CRIMSON_NETHERITE_SHOVEL = new ShovelItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 1.5F, -3.0F)));
-            public static final Item DARK_OAK_NETHERITE_SHOVEL = new ShovelItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 1.5F, -3.0F)));
-            public static final Item JUNGLE_NETHERITE_SHOVEL = new ShovelItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 1.5F, -3.0F)));
-            public static final Item MANGROVE_NETHERITE_SHOVEL = new ShovelItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 1.5F, -3.0F)));
-            public static final Item SPRUCE_NETHERITE_SHOVEL = new ShovelItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 1.5F, -3.0F)));
-            public static final Item WARPED_NETHERITE_SHOVEL = new ShovelItem(Tiers.NETHERITE, (new Item.Properties()).fireResistant().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 1.5F, -3.0F)));
+            public static final Item ACACIA_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "acacia", 1.5F, -3.0F);
+            public static final Item BAMBOO_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "bamboo", 1.5F, -3.0F);
+            public static final Item BIRCH_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "birch", 1.5F, -3.0F);
+            public static final Item CHERRY_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "cherry", 1.5F, -3.0F);
+            public static final Item CRIMSON_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "crimson", 1.5F, -3.0F);
+            public static final Item DARK_OAK_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "dark_oak", 1.5F, -3.0F);
+            public static final Item JUNGLE_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "jungle", 1.5F, -3.0F);
+            public static final Item MANGROVE_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "mangrove", 1.5F, -3.0F);
+            public static final Item SPRUCE_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "spruce", 1.5F, -3.0F);
+            public static final Item WARPED_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "warped", 1.5F, -3.0F);
             
         // Brushes
-            public static final Item ACACIA_BRUSH = new BrushItem((new Item.Properties()).durability(64));
-            public static final Item BAMBOO_BRUSH = new BrushItem((new Item.Properties()).durability(64));
-            public static final Item BIRCH_BRUSH = new BrushItem((new Item.Properties()).durability(64));
-            public static final Item CHERRY_BRUSH = new BrushItem((new Item.Properties()).durability(64));
-            public static final Item CRIMSON_BRUSH = new BrushItem((new Item.Properties()).durability(64).fireResistant());
-            public static final Item DARK_OAK_BRUSH = new BrushItem((new Item.Properties()).durability(64));
-            public static final Item JUNGLE_BRUSH = new BrushItem((new Item.Properties()).durability(64));
-            public static final Item MANGROVE_BRUSH = new BrushItem((new Item.Properties()).durability(64));
-            public static final Item SPRUCE_BRUSH = new BrushItem((new Item.Properties()).durability(64));
-            public static final Item WARPED_BRUSH = new BrushItem((new Item.Properties()).durability(64).fireResistant());
+            public static final Item ACACIA_BRUSH = createBrushItem("acacia");
+            public static final Item BAMBOO_BRUSH = createBrushItem("bamboo");
+            public static final Item BIRCH_BRUSH = createBrushItem("birch");
+            public static final Item CHERRY_BRUSH = createBrushItem("cherry");
+            public static final Item CRIMSON_BRUSH = createBrushItem("crimson");
+            public static final Item DARK_OAK_BRUSH = createBrushItem("dark_oak");
+            public static final Item JUNGLE_BRUSH = createBrushItem("jungle");
+            public static final Item MANGROVE_BRUSH = createBrushItem("mangrove");
+            public static final Item SPRUCE_BRUSH = createBrushItem("spruce");
+            public static final Item WARPED_BRUSH = createBrushItem("warped");
+
+            public static BrushItem createBrushItem(String woodType) {
+                Item.Properties brushProperties = new Item.Properties().setId(ResourceKey.create(Registries.ITEM, MoreToolVariants.asId(woodType + "_brush"))).durability(64);
+                if (woodType.matches("crimson|warped")) {
+                    brushProperties = brushProperties.fireResistant();
+                }
+                return new BrushItem(brushProperties);
+            }
 
     public static final List<Item> more_tools = new ArrayList<>();
     public static final List<Item> more_axes = new ArrayList<>();

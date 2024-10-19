@@ -3,12 +3,8 @@
   "category": "equipment",
   "group": "deepslate_shovels",
   "key": {
-    "/": {
-      "item": "mstv-base:warped_stick"
-    },
-    "<": {
-      "item": "minecraft:deepslate"
-    }
+    "/": "mstv-base:warped_stick",
+    "<": "minecraft:deepslate"
   },
   "pattern": [
     "<",

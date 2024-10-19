@@ -3,12 +3,8 @@
   "category": "equipment",
   "group": "deepslate_hoes",
   "key": {
-    "/": {
-      "item": "mstv-base:mangrove_stick"
-    },
-    "<": {
-      "item": "minecraft:deepslate"
-    }
+    "/": "mstv-base:mangrove_stick",
+    "<": "minecraft:deepslate"
   },
   "pattern": [
     "<<",

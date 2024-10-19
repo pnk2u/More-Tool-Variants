@@ -3,12 +3,8 @@
   "category": "equipment",
   "group": "deepslate_hoes",
   "key": {
-    "/": {
-      "item": "mstv-base:spruce_stick"
-    },
-    "<": {
-      "item": "minecraft:deepslate"
-    }
+    "/": "mstv-base:spruce_stick",
+    "<": "minecraft:deepslate"
   },
   "pattern": [
     "<<",
