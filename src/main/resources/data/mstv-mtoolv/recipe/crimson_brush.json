@@ -3,15 +3,9 @@
   "category": "equipment",
   "group": "brushes",
   "key": {
-    "/": {
-      "item": "mstv-base:crimson_stick"
-    },
-    "C": {
-      "item": "minecraft:copper_ingot"
-    },
-    "F": {
-      "item": "minecraft:feather"
-    }
+    "/": "mstv-base:crimson_stick",
+    "C": "minecraft:copper_ingot",
+    "F": "minecraft:feather"
   },
   "pattern": [
     "F",

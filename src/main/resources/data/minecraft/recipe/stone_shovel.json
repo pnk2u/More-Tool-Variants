@@ -3,12 +3,8 @@
   "category": "equipment",
   "group": "stone_shovels",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "X": {
-      "item": "minecraft:cobblestone"
-    }
+    "#": "minecraft:stick",
+    "X": "minecraft:cobblestone"
   },
   "pattern": [
     "X",

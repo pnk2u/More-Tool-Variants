@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:netherite_ingot"
-  },
-  "base": {
-    "item": "mstv-mtoolv:cherry_diamond_axe"
-  },
+  "addition": "minecraft:netherite_ingot",
+  "base": "mstv-mtoolv:cherry_diamond_axe",
   "result": {
     "count": 1,
     "id": "mstv-mtoolv:cherry_netherite_axe"
   },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
+  "template": "minecraft:netherite_upgrade_smithing_template"
 }

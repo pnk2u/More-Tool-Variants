@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:netherite_ingot"
-  },
-  "base": {
-    "item": "mstv-mtoolv:dark_oak_diamond_hoe"
-  },
+  "addition": "minecraft:netherite_ingot",
+  "base": "mstv-mtoolv:dark_oak_diamond_hoe",
   "result": {
     "count": 1,
     "id": "mstv-mtoolv:dark_oak_netherite_hoe"
   },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
+  "template": "minecraft:netherite_upgrade_smithing_template"
 }
