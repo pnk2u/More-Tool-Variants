@@ -27,12 +27,12 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"mstv-mfrv" {
+		"mstv-mtoolv" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
 	}
-	// accessWidenerPath = file("src/main/resources/mstv-mfrv.accesswidener")
+	// accessWidenerPath = file("src/main/resources/mstv-mtoolv.accesswidener")
 }
 
 fabricApi {
