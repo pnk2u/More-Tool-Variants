@@ -4,7 +4,7 @@
   "group": "deepslate_axes",
   "key": {
     "/": "mstv-base:crimson_stick",
-    "<": "minecraft:deepslate"
+    "<": "minecraft:cobbled_deepslate"
   },
   "pattern": [
     "<<",

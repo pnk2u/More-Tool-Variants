@@ -4,7 +4,7 @@
   "group": "deepslate_hoes",
   "key": {
     "/": "mstv-base:dark_oak_stick",
-    "<": "minecraft:deepslate"
+    "<": "minecraft:cobbled_deepslate"
   },
   "pattern": [
     "<<",

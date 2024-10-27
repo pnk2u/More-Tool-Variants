@@ -4,7 +4,7 @@
   "group": "deepslate_pickaxes",
   "key": {
     "/": "mstv-base:cherry_stick",
-    "<": "minecraft:deepslate"
+    "<": "minecraft:cobbled_deepslate"
   },
   "pattern": [
     "<<<",

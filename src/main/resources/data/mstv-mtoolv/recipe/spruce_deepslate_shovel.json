@@ -4,7 +4,7 @@
   "group": "deepslate_shovels",
   "key": {
     "/": "mstv-base:spruce_stick",
-    "<": "minecraft:deepslate"
+    "<": "minecraft:cobbled_deepslate"
   },
   "pattern": [
     "<",
