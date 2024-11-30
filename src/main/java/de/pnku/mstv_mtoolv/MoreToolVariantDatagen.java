@@ -1,7 +1,7 @@
 package de.pnku.mstv_mtoolv;
 
-import de.pnku.mstv_mtoolv.datagen.MoreToolVariantLangGenerator;
-import de.pnku.mstv_mtoolv.datagen.MoreToolVariantModelGenerator;
+//import de.pnku.mstv_mtoolv.datagen.MoreToolVariantLangGenerator;
+//import de.pnku.mstv_mtoolv.datagen.MoreToolVariantModelGenerator;
 //import de.pnku.mstv_mtoolv.datagen.MoreToolVariantRecipeGenerator;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
