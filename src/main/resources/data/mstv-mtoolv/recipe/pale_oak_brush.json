@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "brushes",
+  "key": {
+    "/": "mstv-base:pale_oak_stick",
+    "C": "minecraft:copper_ingot",
+    "F": "minecraft:feather"
+  },
+  "pattern": [
+    "F",
+    "C",
+    "/"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:pale_oak_brush"
+  }
+}

@@ -57,6 +57,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_WOODEN_AXE = createToolItem("axe", WOOD, "cherry", 6.0F, -3.2F);
             public static final Item CRIMSON_WOODEN_AXE = createToolItem("axe", WOOD, "crimson", 6.0F, -3.2F);
             public static final Item DARK_OAK_WOODEN_AXE = createToolItem("axe", WOOD, "dark_oak", 6.0F, -3.2F);
+            public static final Item PALE_OAK_WOODEN_AXE = createToolItem("axe", WOOD, "pale_oak", 6.0F, -3.2F);
             public static final Item JUNGLE_WOODEN_AXE = createToolItem("axe", WOOD, "jungle", 6.0F, -3.2F);
             public static final Item MANGROVE_WOODEN_AXE = createToolItem("axe", WOOD, "mangrove", 6.0F, -3.2F);
             public static final Item SPRUCE_WOODEN_AXE = createToolItem("axe", WOOD, "spruce", 6.0F, -3.2F);
@@ -69,6 +70,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_STONE_AXE = createToolItem("axe", STONE, "cherry", 7.0F, -3.2F);
                     public static final Item CRIMSON_STONE_AXE = createToolItem("axe", STONE, "crimson", 7.0F, -3.2F);
                     public static final Item DARK_OAK_STONE_AXE = createToolItem("axe", STONE, "dark_oak", 7.0F, -3.2F);
+                    public static final Item PALE_OAK_STONE_AXE = createToolItem("axe", STONE, "pale_oak", 7.0F, -3.2F);
                     public static final Item JUNGLE_STONE_AXE = createToolItem("axe", STONE, "jungle", 7.0F, -3.2F);
                     public static final Item MANGROVE_STONE_AXE = createToolItem("axe", STONE, "mangrove", 7.0F, -3.2F);
                     public static final Item SPRUCE_STONE_AXE = createToolItem("axe", STONE, "spruce", 7.0F, -3.2F);
@@ -80,6 +82,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "cherry", 7.0F, -3.2F);
                     public static final Item CRIMSON_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "crimson", 7.0F, -3.2F);
                     public static final Item DARK_OAK_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "dark_oak", 7.0F, -3.2F);
+                    public static final Item PALE_OAK_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "pale_oak", 7.0F, -3.2F);
                     public static final Item JUNGLE_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "jungle", 7.0F, -3.2F);
                     public static final Item MANGROVE_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "mangrove", 7.0F, -3.2F);
                     public static final Item OAK_DEEPSLATE_AXE = createToolItem("axe", STONE, 1, "oak", 7.0F, -3.2F);
@@ -92,6 +95,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "cherry", 7.0F, -3.2F);
                     public static final Item CRIMSON_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "crimson", 7.0F, -3.2F);
                     public static final Item DARK_OAK_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "dark_oak", 7.0F, -3.2F);
+                    public static final Item PALE_OAK_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "pale_oak", 7.0F, -3.2F);
                     public static final Item JUNGLE_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "jungle", 7.0F, -3.2F);
                     public static final Item MANGROVE_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "mangrove", 7.0F, -3.2F);
                     public static final Item OAK_BLACKSTONE_AXE = createToolItem("axe", STONE, 2, "oak", 7.0F, -3.2F);
@@ -104,6 +108,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_GOLDEN_AXE = createToolItem("axe", GOLD, "cherry", 6.0F, -3.0F);
             public static final Item CRIMSON_GOLDEN_AXE = createToolItem("axe", GOLD, "crimson", 6.0F, -3.0F);
             public static final Item DARK_OAK_GOLDEN_AXE = createToolItem("axe", GOLD, "dark_oak", 6.0F, -3.0F);
+            public static final Item PALE_OAK_GOLDEN_AXE = createToolItem("axe", GOLD, "pale_oak", 6.0F, -3.0F);
             public static final Item JUNGLE_GOLDEN_AXE = createToolItem("axe", GOLD, "jungle", 6.0F, -3.0F);
             public static final Item MANGROVE_GOLDEN_AXE = createToolItem("axe", GOLD, "mangrove", 6.0F, -3.0F);
             public static final Item SPRUCE_GOLDEN_AXE = createToolItem("axe", GOLD, "spruce", 6.0F, -3.0F);
@@ -115,6 +120,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_IRON_AXE = createToolItem("axe", IRON, "cherry", 6.0F, -3.1F);
             public static final Item CRIMSON_IRON_AXE = createToolItem("axe", IRON, "crimson", 6.0F, -3.1F);
             public static final Item DARK_OAK_IRON_AXE = createToolItem("axe", IRON, "dark_oak", 6.0F, -3.1F);
+            public static final Item PALE_OAK_IRON_AXE = createToolItem("axe", IRON, "pale_oak", 6.0F, -3.1F);
             public static final Item JUNGLE_IRON_AXE = createToolItem("axe", IRON, "jungle", 6.0F, -3.1F);
             public static final Item MANGROVE_IRON_AXE = createToolItem("axe", IRON, "mangrove", 6.0F, -3.1F);
             public static final Item SPRUCE_IRON_AXE = createToolItem("axe", IRON, "spruce", 6.0F, -3.1F);
@@ -126,6 +132,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_DIAMOND_AXE = createToolItem("axe", DIAMOND, "cherry", 5.0F, -3.0F);
             public static final Item CRIMSON_DIAMOND_AXE = createToolItem("axe", DIAMOND, "crimson", 5.0F, -3.0F);
             public static final Item DARK_OAK_DIAMOND_AXE = createToolItem("axe", DIAMOND, "dark_oak", 5.0F, -3.0F);
+            public static final Item PALE_OAK_DIAMOND_AXE = createToolItem("axe", DIAMOND, "pale_oak", 5.0F, -3.0F);
             public static final Item JUNGLE_DIAMOND_AXE = createToolItem("axe", DIAMOND, "jungle", 5.0F, -3.0F);
             public static final Item MANGROVE_DIAMOND_AXE = createToolItem("axe", DIAMOND, "mangrove", 5.0F, -3.0F);
             public static final Item SPRUCE_DIAMOND_AXE = createToolItem("axe", DIAMOND, "spruce", 5.0F, -3.0F);
@@ -137,6 +144,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_NETHERITE_AXE = createToolItem("axe", NETHERITE, "cherry", 5.0F, -3.0F);
             public static final Item CRIMSON_NETHERITE_AXE = createToolItem("axe", NETHERITE, "crimson", 5.0F, -3.0F);
             public static final Item DARK_OAK_NETHERITE_AXE = createToolItem("axe", NETHERITE, "dark_oak", 5.0F, -3.0F);
+            public static final Item PALE_OAK_NETHERITE_AXE = createToolItem("axe", NETHERITE, "pale_oak", 5.0F, -3.0F);
             public static final Item JUNGLE_NETHERITE_AXE = createToolItem("axe", NETHERITE, "jungle", 5.0F, -3.0F);
             public static final Item MANGROVE_NETHERITE_AXE = createToolItem("axe", NETHERITE, "mangrove", 5.0F, -3.0F);
             public static final Item SPRUCE_NETHERITE_AXE = createToolItem("axe", NETHERITE, "spruce", 5.0F, -3.0F);
@@ -152,6 +160,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "cherry", 1.0F, -2.8F);
             public static final Item CRIMSON_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "crimson", 1.0F, -2.8F);
             public static final Item DARK_OAK_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "dark_oak", 1.0F, -2.8F);
+            public static final Item PALE_OAK_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "pale_oak", 1.0F, -2.8F);
             public static final Item JUNGLE_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "jungle", 1.0F, -2.8F);
             public static final Item MANGROVE_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "mangrove", 1.0F, -2.8F);
             public static final Item SPRUCE_WOODEN_PICKAXE = createToolItem("pickaxe", WOOD, "spruce", 1.0F, -2.8F);
@@ -164,6 +173,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_STONE_PICKAXE = createToolItem("pickaxe", STONE, "cherry", 1.0F, -2.8F);
                     public static final Item CRIMSON_STONE_PICKAXE = createToolItem("pickaxe", STONE, "crimson", 1.0F, -2.8F);
                     public static final Item DARK_OAK_STONE_PICKAXE = createToolItem("pickaxe", STONE, "dark_oak", 1.0F, -2.8F);
+                    public static final Item PALE_OAK_STONE_PICKAXE = createToolItem("pickaxe", STONE, "pale_oak", 1.0F, -2.8F);
                     public static final Item JUNGLE_STONE_PICKAXE = createToolItem("pickaxe", STONE, "jungle", 1.0F, -2.8F);
                     public static final Item MANGROVE_STONE_PICKAXE = createToolItem("pickaxe", STONE, "mangrove", 1.0F, -2.8F);
                     public static final Item SPRUCE_STONE_PICKAXE = createToolItem("pickaxe", STONE, "spruce", 1.0F, -2.8F);
@@ -175,6 +185,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "cherry", 1.0F, -2.8F);
                     public static final Item CRIMSON_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "crimson", 1.0F, -2.8F);
                     public static final Item DARK_OAK_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "dark_oak", 1.0F, -2.8F);
+                    public static final Item PALE_OAK_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "pale_oak", 1.0F, -2.8F);
                     public static final Item JUNGLE_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "jungle", 1.0F, -2.8F);
                     public static final Item MANGROVE_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "mangrove", 1.0F, -2.8F);
                     public static final Item OAK_DEEPSLATE_PICKAXE = createToolItem("pickaxe", STONE, 1, "oak", 1.0F, -2.8F);
@@ -187,6 +198,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "cherry", 1.0F, -2.8F);
                     public static final Item CRIMSON_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "crimson", 1.0F, -2.8F);
                     public static final Item DARK_OAK_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "dark_oak", 1.0F, -2.8F);
+                    public static final Item PALE_OAK_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "pale_oak", 1.0F, -2.8F);
                     public static final Item JUNGLE_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "jungle", 1.0F, -2.8F);
                     public static final Item MANGROVE_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "mangrove", 1.0F, -2.8F);
                     public static final Item OAK_BLACKSTONE_PICKAXE = createToolItem("pickaxe", STONE, 2, "oak", 1.0F, -2.8F);
@@ -199,6 +211,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "cherry", 1.0F, -2.8F);
             public static final Item CRIMSON_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "crimson", 1.0F, -2.8F);
             public static final Item DARK_OAK_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "dark_oak", 1.0F, -2.8F);
+            public static final Item PALE_OAK_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "pale_oak", 1.0F, -2.8F);
             public static final Item JUNGLE_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "jungle", 1.0F, -2.8F);
             public static final Item MANGROVE_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "mangrove", 1.0F, -2.8F);
             public static final Item SPRUCE_GOLDEN_PICKAXE = createToolItem("pickaxe", GOLD, "spruce", 1.0F, -2.8F);
@@ -210,6 +223,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_IRON_PICKAXE = createToolItem("pickaxe", IRON, "cherry", 1.0F, -2.8F);
             public static final Item CRIMSON_IRON_PICKAXE = createToolItem("pickaxe", IRON, "crimson", 1.0F, -2.8F);
             public static final Item DARK_OAK_IRON_PICKAXE = createToolItem("pickaxe", IRON, "dark_oak", 1.0F, -2.8F);
+            public static final Item PALE_OAK_IRON_PICKAXE = createToolItem("pickaxe", IRON, "pale_oak", 1.0F, -2.8F);
             public static final Item JUNGLE_IRON_PICKAXE = createToolItem("pickaxe", IRON, "jungle", 1.0F, -2.8F);
             public static final Item MANGROVE_IRON_PICKAXE = createToolItem("pickaxe", IRON, "mangrove", 1.0F, -2.8F);
             public static final Item SPRUCE_IRON_PICKAXE = createToolItem("pickaxe", IRON, "spruce", 1.0F, -2.8F);
@@ -221,6 +235,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "cherry", 1.0F, -2.8F);
             public static final Item CRIMSON_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "crimson", 1.0F, -2.8F);
             public static final Item DARK_OAK_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "dark_oak", 1.0F, -2.8F);
+            public static final Item PALE_OAK_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "pale_oak", 1.0F, -2.8F);
             public static final Item JUNGLE_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "jungle", 1.0F, -2.8F);
             public static final Item MANGROVE_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "mangrove", 1.0F, -2.8F);
             public static final Item SPRUCE_DIAMOND_PICKAXE = createToolItem("pickaxe", DIAMOND, "spruce", 1.0F, -2.8F);
@@ -232,6 +247,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "cherry", 1.0F, -2.8F);
             public static final Item CRIMSON_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "crimson", 1.0F, -2.8F);
             public static final Item DARK_OAK_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "dark_oak", 1.0F, -2.8F);
+            public static final Item PALE_OAK_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "pale_oak", 1.0F, -2.8F);
             public static final Item JUNGLE_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "jungle", 1.0F, -2.8F);
             public static final Item MANGROVE_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "mangrove", 1.0F, -2.8F);
             public static final Item SPRUCE_NETHERITE_PICKAXE = createToolItem("pickaxe", NETHERITE, "spruce", 1.0F, -2.8F);
@@ -247,6 +263,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_WOODEN_HOE = createToolItem("hoe", WOOD, "cherry", 0.0F, -3.0F);
             public static final Item CRIMSON_WOODEN_HOE = createToolItem("hoe", WOOD, "crimson", 0.0F, -3.0F);
             public static final Item DARK_OAK_WOODEN_HOE = createToolItem("hoe", WOOD, "dark_oak", 0.0F, -3.0F);
+            public static final Item PALE_OAK_WOODEN_HOE = createToolItem("hoe", WOOD, "pale_oak", 0.0F, -3.0F);
             public static final Item JUNGLE_WOODEN_HOE = createToolItem("hoe", WOOD, "jungle", 0.0F, -3.0F);
             public static final Item MANGROVE_WOODEN_HOE = createToolItem("hoe", WOOD, "mangrove", 0.0F, -3.0F);
             public static final Item SPRUCE_WOODEN_HOE = createToolItem("hoe", WOOD, "spruce", 0.0F, -3.0F);
@@ -259,6 +276,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_STONE_HOE = createToolItem("hoe", STONE, "cherry", -1.0F, -2.0F);
                     public static final Item CRIMSON_STONE_HOE = createToolItem("hoe", STONE, "crimson", -1.0F, -2.0F);
                     public static final Item DARK_OAK_STONE_HOE = createToolItem("hoe", STONE, "dark_oak", -1.0F, -2.0F);
+                    public static final Item PALE_OAK_STONE_HOE = createToolItem("hoe", STONE, "pale_oak", -1.0F, -2.0F);
                     public static final Item JUNGLE_STONE_HOE = createToolItem("hoe", STONE, "jungle", -1.0F, -2.0F);
                     public static final Item MANGROVE_STONE_HOE = createToolItem("hoe", STONE, "mangrove", -1.0F, -2.0F);
                     public static final Item SPRUCE_STONE_HOE = createToolItem("hoe", STONE, "spruce", -1.0F, -2.0F);
@@ -270,6 +288,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "cherry", -1.0F, -2.0F);
                     public static final Item CRIMSON_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "crimson", -1.0F, -2.0F);
                     public static final Item DARK_OAK_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "dark_oak", -1.0F, -2.0F);
+                    public static final Item PALE_OAK_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "pale_oak", -1.0F, -2.0F);
                     public static final Item JUNGLE_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "jungle", -1.0F, -2.0F);
                     public static final Item MANGROVE_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "mangrove", -1.0F, -2.0F);
                     public static final Item OAK_DEEPSLATE_HOE = createToolItem("hoe", STONE, 1, "oak", -1.0F, -2.0F);
@@ -282,6 +301,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "cherry", -1.0F, -2.0F);
                     public static final Item CRIMSON_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "crimson", -1.0F, -2.0F);
                     public static final Item DARK_OAK_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "dark_oak", -1.0F, -2.0F);
+                    public static final Item PALE_OAK_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "pale_oak", -1.0F, -2.0F);
                     public static final Item JUNGLE_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "jungle", -1.0F, -2.0F);
                     public static final Item MANGROVE_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "mangrove", -1.0F, -2.0F);
                     public static final Item OAK_BLACKSTONE_HOE = createToolItem("hoe", STONE, 2, "oak", -1.0F, -2.0F);
@@ -294,6 +314,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_GOLDEN_HOE = createToolItem("hoe", GOLD, "cherry", 0.0F, -3.0F);
             public static final Item CRIMSON_GOLDEN_HOE = createToolItem("hoe", GOLD, "crimson", 0.0F, -3.0F);
             public static final Item DARK_OAK_GOLDEN_HOE = createToolItem("hoe", GOLD, "dark_oak", 0.0F, -3.0F);
+            public static final Item PALE_OAK_GOLDEN_HOE = createToolItem("hoe", GOLD, "pale_oak", 0.0F, -3.0F);
             public static final Item JUNGLE_GOLDEN_HOE = createToolItem("hoe", GOLD, "jungle", 0.0F, -3.0F);
             public static final Item MANGROVE_GOLDEN_HOE = createToolItem("hoe", GOLD, "mangrove", 0.0F, -3.0F);
             public static final Item SPRUCE_GOLDEN_HOE = createToolItem("hoe", GOLD, "spruce", 0.0F, -3.0F);
@@ -305,6 +326,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_IRON_HOE = createToolItem("hoe", IRON, "cherry", -2.0F, -1.0F);
             public static final Item CRIMSON_IRON_HOE = createToolItem("hoe", IRON, "crimson", -2.0F, -1.0F);
             public static final Item DARK_OAK_IRON_HOE = createToolItem("hoe", IRON, "dark_oak", -2.0F, -1.0F);
+            public static final Item PALE_OAK_IRON_HOE = createToolItem("hoe", IRON, "pale_oak", -2.0F, -1.0F);
             public static final Item JUNGLE_IRON_HOE = createToolItem("hoe", IRON, "jungle", -2.0F, -1.0F);
             public static final Item MANGROVE_IRON_HOE = createToolItem("hoe", IRON, "mangrove", -2.0F, -1.0F);
             public static final Item SPRUCE_IRON_HOE = createToolItem("hoe", IRON, "spruce", -2.0F, -1.0F);
@@ -316,6 +338,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "cherry", -3.0F, 0.0F);
             public static final Item CRIMSON_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "crimson", -3.0F, 0.0F);
             public static final Item DARK_OAK_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "dark_oak", -3.0F, 0.0F);
+            public static final Item PALE_OAK_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "pale_oak", -3.0F, 0.0F);
             public static final Item JUNGLE_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "jungle", -3.0F, 0.0F);
             public static final Item MANGROVE_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "mangrove", -3.0F, 0.0F);
             public static final Item SPRUCE_DIAMOND_HOE = createToolItem("hoe", DIAMOND, "spruce", -3.0F, 0.0F);
@@ -327,6 +350,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "cherry", -4.0F, 0.0F);
             public static final Item CRIMSON_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "crimson", -4.0F, 0.0F);
             public static final Item DARK_OAK_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "dark_oak", -4.0F, 0.0F);
+            public static final Item PALE_OAK_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "pale_oak", -4.0F, 0.0F);
             public static final Item JUNGLE_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "jungle", -4.0F, 0.0F);
             public static final Item MANGROVE_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "mangrove", -4.0F, 0.0F);
             public static final Item SPRUCE_NETHERITE_HOE = createToolItem("hoe", NETHERITE, "spruce", -4.0F, 0.0F);
@@ -339,6 +363,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "cherry", 1.5F, -3.0F);
             public static final Item CRIMSON_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "crimson", 1.5F, -3.0F);
             public static final Item DARK_OAK_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "dark_oak", 1.5F, -3.0F);
+            public static final Item PALE_OAK_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "pale_oak", 1.5F, -3.0F);
             public static final Item JUNGLE_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "jungle", 1.5F, -3.0F);
             public static final Item MANGROVE_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "mangrove", 1.5F, -3.0F);
             public static final Item SPRUCE_WOODEN_SHOVEL = createToolItem("shovel", WOOD, "spruce", 1.5F, -3.0F);
@@ -351,6 +376,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_STONE_SHOVEL = createToolItem("shovel", STONE, "cherry", 1.5F, -3.0F);
                     public static final Item CRIMSON_STONE_SHOVEL = createToolItem("shovel", STONE, "crimson", 1.5F, -3.0F);
                     public static final Item DARK_OAK_STONE_SHOVEL = createToolItem("shovel", STONE, "dark_oak", 1.5F, -3.0F);
+                    public static final Item PALE_OAK_STONE_SHOVEL = createToolItem("shovel", STONE, "pale_oak", 1.5F, -3.0F);
                     public static final Item JUNGLE_STONE_SHOVEL = createToolItem("shovel", STONE, "jungle", 1.5F, -3.0F);
                     public static final Item MANGROVE_STONE_SHOVEL = createToolItem("shovel", STONE, "mangrove", 1.5F, -3.0F);
                     public static final Item SPRUCE_STONE_SHOVEL = createToolItem("shovel", STONE, "spruce", 1.5F, -3.0F);
@@ -362,6 +388,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "cherry", 1.5F, -3.0F);
                     public static final Item CRIMSON_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "crimson", 1.5F, -3.0F);
                     public static final Item DARK_OAK_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "dark_oak", 1.5F, -3.0F);
+                    public static final Item PALE_OAK_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "pale_oak", 1.5F, -3.0F);
                     public static final Item JUNGLE_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "jungle", 1.5F, -3.0F);
                     public static final Item MANGROVE_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "mangrove", 1.5F, -3.0F);
                     public static final Item OAK_DEEPSLATE_SHOVEL = createToolItem("shovel", STONE, 1, "oak", 1.5F, -3.0F);
@@ -374,6 +401,7 @@ public class MoreToolVariantItems {
                     public static final Item CHERRY_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "cherry", 1.5F, -3.0F);
                     public static final Item CRIMSON_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "crimson", 1.5F, -3.0F);
                     public static final Item DARK_OAK_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "dark_oak", 1.5F, -3.0F);
+                    public static final Item PALE_OAK_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "pale_oak", 1.5F, -3.0F);
                     public static final Item JUNGLE_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "jungle", 1.5F, -3.0F);
                     public static final Item MANGROVE_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "mangrove", 1.5F, -3.0F);
                     public static final Item OAK_BLACKSTONE_SHOVEL = createToolItem("shovel", STONE, 2, "oak", 1.5F, -3.0F);
@@ -386,6 +414,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "cherry", 1.5F, -3.0F);
             public static final Item CRIMSON_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "crimson", 1.5F, -3.0F);
             public static final Item DARK_OAK_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "dark_oak", 1.5F, -3.0F);
+            public static final Item PALE_OAK_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "pale_oak", 1.5F, -3.0F);
             public static final Item JUNGLE_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "jungle", 1.5F, -3.0F);
             public static final Item MANGROVE_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "mangrove", 1.5F, -3.0F);
             public static final Item SPRUCE_GOLDEN_SHOVEL = createToolItem("shovel", GOLD, "spruce", 1.5F, -3.0F);
@@ -397,6 +426,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_IRON_SHOVEL = createToolItem("shovel", IRON, "cherry", 1.5F, -3.0F);
             public static final Item CRIMSON_IRON_SHOVEL = createToolItem("shovel", IRON, "crimson", 1.5F, -3.0F);
             public static final Item DARK_OAK_IRON_SHOVEL = createToolItem("shovel", IRON, "dark_oak", 1.5F, -3.0F);
+            public static final Item PALE_OAK_IRON_SHOVEL = createToolItem("shovel", IRON, "pale_oak", 1.5F, -3.0F);
             public static final Item JUNGLE_IRON_SHOVEL = createToolItem("shovel", IRON, "jungle", 1.5F, -3.0F);
             public static final Item MANGROVE_IRON_SHOVEL = createToolItem("shovel", IRON, "mangrove", 1.5F, -3.0F);
             public static final Item SPRUCE_IRON_SHOVEL = createToolItem("shovel", IRON, "spruce", 1.5F, -3.0F);
@@ -408,6 +438,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "cherry", 1.5F, -3.0F);
             public static final Item CRIMSON_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "crimson", 1.5F, -3.0F);
             public static final Item DARK_OAK_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "dark_oak", 1.5F, -3.0F);
+            public static final Item PALE_OAK_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "pale_oak", 1.5F, -3.0F);
             public static final Item JUNGLE_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "jungle", 1.5F, -3.0F);
             public static final Item MANGROVE_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "mangrove", 1.5F, -3.0F);
             public static final Item SPRUCE_DIAMOND_SHOVEL = createToolItem("shovel", DIAMOND, "spruce", 1.5F, -3.0F);
@@ -419,6 +450,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "cherry", 1.5F, -3.0F);
             public static final Item CRIMSON_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "crimson", 1.5F, -3.0F);
             public static final Item DARK_OAK_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "dark_oak", 1.5F, -3.0F);
+            public static final Item PALE_OAK_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "pale_oak", 1.5F, -3.0F);
             public static final Item JUNGLE_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "jungle", 1.5F, -3.0F);
             public static final Item MANGROVE_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "mangrove", 1.5F, -3.0F);
             public static final Item SPRUCE_NETHERITE_SHOVEL = createToolItem("shovel", NETHERITE, "spruce", 1.5F, -3.0F);
@@ -431,6 +463,7 @@ public class MoreToolVariantItems {
             public static final Item CHERRY_BRUSH = createBrushItem("cherry");
             public static final Item CRIMSON_BRUSH = createBrushItem("crimson");
             public static final Item DARK_OAK_BRUSH = createBrushItem("dark_oak");
+            public static final Item PALE_OAK_BRUSH = createBrushItem("pale_oak");
             public static final Item JUNGLE_BRUSH = createBrushItem("jungle");
             public static final Item MANGROVE_BRUSH = createBrushItem("mangrove");
             public static final Item SPRUCE_BRUSH = createBrushItem("spruce");
@@ -666,6 +699,41 @@ public class MoreToolVariantItems {
         registerAxeItem(DARK_OAK_NETHERITE_AXE, DARK_OAK_STICK, DARK_OAK_DIAMOND_AXE, "netherite");
         registerHoeItem(DARK_OAK_NETHERITE_HOE, DARK_OAK_STICK, DARK_OAK_DIAMOND_HOE, "netherite");
         registerBrushItem(DARK_OAK_BRUSH, DARK_OAK_STICK);
+
+        //Pale_oak Tools
+        registerShovelItem(PALE_OAK_WOODEN_SHOVEL, PALE_OAK_STICK, Items.PALE_OAK_PLANKS, "wooden");
+        registerPickaxeItem(PALE_OAK_WOODEN_PICKAXE, PALE_OAK_STICK, Items.PALE_OAK_PLANKS, "wooden");
+        registerAxeItem(PALE_OAK_WOODEN_AXE, PALE_OAK_STICK, Items.PALE_OAK_PLANKS, "wooden");
+        registerHoeItem(PALE_OAK_WOODEN_HOE, PALE_OAK_STICK, Items.PALE_OAK_PLANKS, "wooden");
+        registerShovelItem(PALE_OAK_STONE_SHOVEL, PALE_OAK_STICK, Items.COBBLESTONE, "stone");
+        registerPickaxeItem(PALE_OAK_STONE_PICKAXE, PALE_OAK_STICK, Items.COBBLESTONE, "stone");
+        registerAxeItem(PALE_OAK_STONE_AXE, PALE_OAK_STICK, Items.COBBLESTONE, "stone");
+        registerHoeItem(PALE_OAK_STONE_HOE, PALE_OAK_STICK, Items.COBBLESTONE, "stone");
+        registerShovelItem(PALE_OAK_DEEPSLATE_SHOVEL, PALE_OAK_STICK, Items.DEEPSLATE, "deepslate");
+        registerPickaxeItem(PALE_OAK_DEEPSLATE_PICKAXE, PALE_OAK_STICK, Items.DEEPSLATE, "deepslate");
+        registerAxeItem(PALE_OAK_DEEPSLATE_AXE, PALE_OAK_STICK, Items.DEEPSLATE, "deepslate");
+        registerHoeItem(PALE_OAK_DEEPSLATE_HOE, PALE_OAK_STICK, Items.DEEPSLATE, "deepslate");
+        registerShovelItem(PALE_OAK_BLACKSTONE_SHOVEL, PALE_OAK_STICK, Items.BLACKSTONE, "blackstone");
+        registerPickaxeItem(PALE_OAK_BLACKSTONE_PICKAXE, PALE_OAK_STICK, Items.BLACKSTONE, "blackstone");
+        registerAxeItem(PALE_OAK_BLACKSTONE_AXE, PALE_OAK_STICK, Items.BLACKSTONE, "blackstone");
+        registerHoeItem(PALE_OAK_BLACKSTONE_HOE, PALE_OAK_STICK, Items.BLACKSTONE, "blackstone");
+        registerShovelItem(PALE_OAK_IRON_SHOVEL, PALE_OAK_STICK, Items.IRON_INGOT, "iron");
+        registerPickaxeItem(PALE_OAK_IRON_PICKAXE, PALE_OAK_STICK, Items.IRON_INGOT, "iron");
+        registerAxeItem(PALE_OAK_IRON_AXE, PALE_OAK_STICK, Items.IRON_INGOT, "iron");
+        registerHoeItem(PALE_OAK_IRON_HOE, PALE_OAK_STICK, Items.IRON_INGOT, "iron");
+        registerShovelItem(PALE_OAK_GOLDEN_SHOVEL, PALE_OAK_STICK, Items.GOLD_INGOT, "golden");
+        registerPickaxeItem(PALE_OAK_GOLDEN_PICKAXE, PALE_OAK_STICK, Items.GOLD_INGOT, "golden");
+        registerAxeItem(PALE_OAK_GOLDEN_AXE, PALE_OAK_STICK, Items.GOLD_INGOT, "golden");
+        registerHoeItem(PALE_OAK_GOLDEN_HOE, PALE_OAK_STICK, Items.GOLD_INGOT, "golden");
+        registerShovelItem(PALE_OAK_DIAMOND_SHOVEL, PALE_OAK_STICK, Items.DIAMOND, "diamond");
+        registerPickaxeItem(PALE_OAK_DIAMOND_PICKAXE, PALE_OAK_STICK, Items.DIAMOND, "diamond");
+        registerAxeItem(PALE_OAK_DIAMOND_AXE, PALE_OAK_STICK, Items.DIAMOND, "diamond");
+        registerHoeItem(PALE_OAK_DIAMOND_HOE, PALE_OAK_STICK, Items.DIAMOND, "diamond");
+        registerShovelItem(PALE_OAK_NETHERITE_SHOVEL, PALE_OAK_STICK, PALE_OAK_DIAMOND_SHOVEL, "netherite");
+        registerPickaxeItem(PALE_OAK_NETHERITE_PICKAXE, PALE_OAK_STICK, PALE_OAK_DIAMOND_PICKAXE, "netherite");
+        registerAxeItem(PALE_OAK_NETHERITE_AXE, PALE_OAK_STICK, PALE_OAK_DIAMOND_AXE, "netherite");
+        registerHoeItem(PALE_OAK_NETHERITE_HOE, PALE_OAK_STICK, PALE_OAK_DIAMOND_HOE, "netherite");
+        registerBrushItem(PALE_OAK_BRUSH, PALE_OAK_STICK);
 
       //Jungle Tools
         registerShovelItem(JUNGLE_WOODEN_SHOVEL, JUNGLE_STICK, Items.JUNGLE_PLANKS, "wooden");
