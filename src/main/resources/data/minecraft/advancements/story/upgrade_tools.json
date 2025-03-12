@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#mstv-mtoolv:all_stone_pickaxes"
+            "tag": "mstv-mtoolv:all_stone_pickaxes"
           }
         ]
       },

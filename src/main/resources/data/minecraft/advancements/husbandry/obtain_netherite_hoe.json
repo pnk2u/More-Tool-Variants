@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#mstv-mtoolv:all_netherite_hoes"
+            "tag": "mstv-mtoolv:all_netherite_hoes"
           }
         ]
       },
