@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#mstv-mtoolv:variant_iron_pickaxes"
+            "items": "#mstv-mtoolv:all_iron_pickaxes"
           }
         ]
       },
