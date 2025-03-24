@@ -19,19 +19,20 @@ import static net.minecraft.world.item.ToolMaterial.*;
 
 public class MoreToolVariantItems {
 
-    public static DiggerItem createToolItem(String toolType, ToolMaterial toolMaterial, String woodType, float ToolAD, float ToolAS){
+    public static Item createToolItem(String toolType, ToolMaterial toolMaterial, String woodType, float ToolAD, float ToolAS){
         return createToolItem(toolType, toolMaterial, 0, woodType, ToolAD, ToolAS);
     }
 
-    public static DiggerItem createToolItem(String toolType, ToolMaterial toolMaterial, int specialCase, String woodType, float ToolAD, float ToolAS){
+    public static Item createToolItem(String toolType, ToolMaterial toolMaterial, int specialCase, String woodType, float ToolAD, float ToolAS){
         String materialPrefix = materialPrefixFromToolMaterial(toolMaterial, specialCase);
-        Item.Properties toolProperties = new Item.Properties().setId(ResourceKey.create(Registries.ITEM, MoreToolVariants.asId(woodType + materialPrefix + "_" + toolType)));
+        Item.Properties toolProperties = toolType.equals("pickaxe") ? new Item.Properties().pickaxe(toolMaterial, ToolAD, ToolAS) : new Item.Properties();
+        toolProperties = toolProperties.setId(ResourceKey.create(Registries.ITEM, MoreToolVariants.asId(woodType + materialPrefix + "_" + toolType)));
         if (woodType.matches("crimson|warped") || toolMaterial.equals(NETHERITE)) {
             toolProperties = toolProperties.fireResistant();
         }
         switch (toolType) {
             case "axe" -> {return new AxeItem(toolMaterial, ToolAD, ToolAS, toolProperties);}
-            case "pickaxe" -> {return new PickaxeItem(toolMaterial, ToolAD, ToolAS, toolProperties);}
+            case "pickaxe" -> {return new Item(toolProperties);}
             case "hoe" -> {return new HoeItem(toolMaterial, ToolAD, ToolAS, toolProperties);}
             case "shovel" -> {return new ShovelItem(toolMaterial, ToolAD, ToolAS, toolProperties);}
             default -> {return null;}
