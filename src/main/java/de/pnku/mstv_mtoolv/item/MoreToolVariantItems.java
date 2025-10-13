@@ -45,7 +45,7 @@ public class MoreToolVariantItems {
         else if (toolMaterial == IRON) {return "_iron";}
         else if (toolMaterial == DIAMOND) {return "_diamond";}
         else if (toolMaterial == NETHERITE) {return "_netherite";}
-        else {return "_unknownMaterialType";}
+        else {return "_unknown_material_type";}
     }
 
     // Regular Tiered Tools
