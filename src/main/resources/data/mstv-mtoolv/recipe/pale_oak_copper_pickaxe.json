@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "copper_pickaxes",
+  "key": {
+    "/": "mstv-base:pale_oak_stick",
+    "<": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "<<<",
+    " / ",
+    " / "
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:pale_oak_copper_pickaxe"
+  }
+}

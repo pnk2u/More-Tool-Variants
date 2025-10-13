@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "copper_axes",
+  "key": {
+    "/": "mstv-base:crimson_stick",
+    "<": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "<<",
+    "</",
+    " /"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:crimson_copper_axe"
+  }
+}

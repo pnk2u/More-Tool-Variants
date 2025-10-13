@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "copper_hoes",
+  "key": {
+    "/": "minecraft:bamboo",
+    "<": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "<<",
+    " /",
+    " /"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mstv-mtoolv:bamboo_copper_hoe"
+  }
+}
