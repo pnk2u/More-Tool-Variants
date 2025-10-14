@@ -20,6 +20,8 @@ Want to help translate? Feel free to open a PR to the **default branch (`1.21(.1
 ### Changelog History
 
 <!--CHANGELOG:START-->
+### 1.2.1:
+- `1.21.9(10)`: Fix broken vanilla Copper Pickaxe, Shovel and Hoe recipes in `1.2.0`
 ## 1.2.0:
 - `1.21.9(10)`: Add _**Copper** Pickaxe, Axe, Shovel and Hoe_ Variants
 ### 1.1.3:
