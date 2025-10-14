@@ -1,3 +1,5 @@
+## 1.2.0:
+- `1.21.9(10)`: Add _**Copper** Pickaxe, Axe, Shovel and Hoe_ Variants
 ### 1.1.3:
 - `1.21.5`: Update to 1.21.5
 ### 1.1.2:
