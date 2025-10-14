@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Map;
 
 import static de.pnku.mstv_base.item.MoreStickVariantItems.*;
-import static de.pnku.mstv_mtoolv.MoreToolVariants.hasCopperTools;
 import static net.minecraft.world.item.ToolMaterial.*;
 
 
@@ -44,7 +43,6 @@ public class MoreToolVariantItems {
         if (toolMaterial == WOOD) {return "_wooden";}
         else if (toolMaterial == STONE) {if (specialCase == 1) return "_deepslate"; if (specialCase == 2) return "_blackstone"; else return "_stone";}
         else if (toolMaterial == GOLD) {return "_golden";}
-        else if (specialCase == 3) {return "_copper";}
         else if (toolMaterial == IRON) {return "_iron";}
         else if (toolMaterial == DIAMOND) {return "_diamond";}
         else if (toolMaterial == NETHERITE) {return "_netherite";}
@@ -116,7 +114,6 @@ public class MoreToolVariantItems {
             public static final Item MANGROVE_GOLDEN_AXE = createToolItem("axe", GOLD, "mangrove", 6.0F, -3.0F);
             public static final Item SPRUCE_GOLDEN_AXE = createToolItem("axe", GOLD, "spruce", 6.0F, -3.0F);
             public static final Item WARPED_GOLDEN_AXE = createToolItem("axe", GOLD, "warped", 6.0F, -3.0F);
-
             // TOOL: Iron Axes
             public static final Item ACACIA_IRON_AXE = createToolItem("axe", IRON, "acacia", 6.0F, -3.1F);
             public static final Item BAMBOO_IRON_AXE = createToolItem("axe", IRON, "bamboo", 6.0F, -3.1F);
@@ -511,9 +508,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(ACACIA_BLACKSTONE_PICKAXE, ACACIA_STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(ACACIA_BLACKSTONE_AXE, ACACIA_STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(ACACIA_BLACKSTONE_HOE, ACACIA_STICK, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("acacia");
-        }
         registerShovelItem(ACACIA_IRON_SHOVEL, ACACIA_STICK, Items.IRON_INGOT, "iron");
         registerPickaxeItem(ACACIA_IRON_PICKAXE, ACACIA_STICK, Items.IRON_INGOT, "iron");
         registerAxeItem(ACACIA_IRON_AXE, ACACIA_STICK, Items.IRON_INGOT, "iron");
@@ -549,9 +543,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(BAMBOO_BLACKSTONE_PICKAXE, Items.BAMBOO, Items.BLACKSTONE, "blackstone");
         registerAxeItem(BAMBOO_BLACKSTONE_AXE, Items.BAMBOO, Items.BLACKSTONE, "blackstone");
         registerHoeItem(BAMBOO_BLACKSTONE_HOE, Items.BAMBOO, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("bamboo");
-        }
         registerShovelItem(BAMBOO_IRON_SHOVEL, Items.BAMBOO, Items.IRON_INGOT, "iron");
         registerPickaxeItem(BAMBOO_IRON_PICKAXE, Items.BAMBOO, Items.IRON_INGOT, "iron");
         registerAxeItem(BAMBOO_IRON_AXE, Items.BAMBOO, Items.IRON_INGOT, "iron");
@@ -587,9 +578,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(BIRCH_BLACKSTONE_PICKAXE, BIRCH_STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(BIRCH_BLACKSTONE_AXE, BIRCH_STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(BIRCH_BLACKSTONE_HOE, BIRCH_STICK, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("birch");
-        }
         registerShovelItem(BIRCH_IRON_SHOVEL, BIRCH_STICK, Items.IRON_INGOT, "iron");
         registerPickaxeItem(BIRCH_IRON_PICKAXE, BIRCH_STICK, Items.IRON_INGOT, "iron");
         registerAxeItem(BIRCH_IRON_AXE, BIRCH_STICK, Items.IRON_INGOT, "iron");
@@ -625,9 +613,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(CHERRY_BLACKSTONE_PICKAXE, CHERRY_STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(CHERRY_BLACKSTONE_AXE, CHERRY_STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(CHERRY_BLACKSTONE_HOE, CHERRY_STICK, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("cherry");
-        }
         registerShovelItem(CHERRY_IRON_SHOVEL, CHERRY_STICK, Items.IRON_INGOT, "iron");
         registerPickaxeItem(CHERRY_IRON_PICKAXE, CHERRY_STICK, Items.IRON_INGOT, "iron");
         registerAxeItem(CHERRY_IRON_AXE, CHERRY_STICK, Items.IRON_INGOT, "iron");
@@ -663,9 +648,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(CRIMSON_BLACKSTONE_PICKAXE, CRIMSON_STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(CRIMSON_BLACKSTONE_AXE, CRIMSON_STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(CRIMSON_BLACKSTONE_HOE, CRIMSON_STICK, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("crimson");
-        }
         registerShovelItem(CRIMSON_IRON_SHOVEL, CRIMSON_STICK, Items.IRON_INGOT, "iron");
         registerPickaxeItem(CRIMSON_IRON_PICKAXE, CRIMSON_STICK, Items.IRON_INGOT, "iron");
         registerAxeItem(CRIMSON_IRON_AXE, CRIMSON_STICK, Items.IRON_INGOT, "iron");
@@ -701,9 +683,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(DARK_OAK_BLACKSTONE_PICKAXE, DARK_OAK_STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(DARK_OAK_BLACKSTONE_AXE, DARK_OAK_STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(DARK_OAK_BLACKSTONE_HOE, DARK_OAK_STICK, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("dark_oak");
-        }
         registerShovelItem(DARK_OAK_IRON_SHOVEL, DARK_OAK_STICK, Items.IRON_INGOT, "iron");
         registerPickaxeItem(DARK_OAK_IRON_PICKAXE, DARK_OAK_STICK, Items.IRON_INGOT, "iron");
         registerAxeItem(DARK_OAK_IRON_AXE, DARK_OAK_STICK, Items.IRON_INGOT, "iron");
@@ -739,9 +718,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(PALE_OAK_BLACKSTONE_PICKAXE, PALE_OAK_STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(PALE_OAK_BLACKSTONE_AXE, PALE_OAK_STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(PALE_OAK_BLACKSTONE_HOE, PALE_OAK_STICK, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("pale_oak");
-        }
         registerShovelItem(PALE_OAK_IRON_SHOVEL, PALE_OAK_STICK, Items.IRON_INGOT, "iron");
         registerPickaxeItem(PALE_OAK_IRON_PICKAXE, PALE_OAK_STICK, Items.IRON_INGOT, "iron");
         registerAxeItem(PALE_OAK_IRON_AXE, PALE_OAK_STICK, Items.IRON_INGOT, "iron");
@@ -777,9 +753,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(JUNGLE_BLACKSTONE_PICKAXE, JUNGLE_STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(JUNGLE_BLACKSTONE_AXE, JUNGLE_STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(JUNGLE_BLACKSTONE_HOE, JUNGLE_STICK, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("jungle");
-        }
         registerShovelItem(JUNGLE_IRON_SHOVEL, JUNGLE_STICK, Items.IRON_INGOT, "iron");
         registerPickaxeItem(JUNGLE_IRON_PICKAXE, JUNGLE_STICK, Items.IRON_INGOT, "iron");
         registerAxeItem(JUNGLE_IRON_AXE, JUNGLE_STICK, Items.IRON_INGOT, "iron");
@@ -815,9 +788,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(MANGROVE_BLACKSTONE_PICKAXE, MANGROVE_STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(MANGROVE_BLACKSTONE_AXE, MANGROVE_STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(MANGROVE_BLACKSTONE_HOE, MANGROVE_STICK, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("mangrove");
-        }
         registerShovelItem(MANGROVE_IRON_SHOVEL, MANGROVE_STICK, Items.IRON_INGOT, "iron");
         registerPickaxeItem(MANGROVE_IRON_PICKAXE, MANGROVE_STICK, Items.IRON_INGOT, "iron");
         registerAxeItem(MANGROVE_IRON_AXE, MANGROVE_STICK, Items.IRON_INGOT, "iron");
@@ -888,9 +858,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(SPRUCE_BLACKSTONE_PICKAXE, SPRUCE_STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(SPRUCE_BLACKSTONE_AXE, SPRUCE_STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(SPRUCE_BLACKSTONE_HOE, SPRUCE_STICK, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("spruce");
-        }
         registerShovelItem(SPRUCE_IRON_SHOVEL, SPRUCE_STICK, Items.IRON_INGOT, "iron");
         registerPickaxeItem(SPRUCE_IRON_PICKAXE, SPRUCE_STICK, Items.IRON_INGOT, "iron");
         registerAxeItem(SPRUCE_IRON_AXE, SPRUCE_STICK, Items.IRON_INGOT, "iron");
@@ -926,9 +893,6 @@ public class MoreToolVariantItems {
         registerPickaxeItem(WARPED_BLACKSTONE_PICKAXE, WARPED_STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(WARPED_BLACKSTONE_AXE, WARPED_STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(WARPED_BLACKSTONE_HOE, WARPED_STICK, Items.BLACKSTONE, "blackstone");
-        if (hasCopperTools) {
-            MoreToolVariantCopper.registerCopperToolsByVariant("warped");
-        }
         registerShovelItem(WARPED_IRON_SHOVEL, WARPED_STICK, Items.IRON_INGOT, "iron");
         registerPickaxeItem(WARPED_IRON_PICKAXE, WARPED_STICK, Items.IRON_INGOT, "iron");
         registerAxeItem(WARPED_IRON_AXE, WARPED_STICK, Items.IRON_INGOT, "iron");
@@ -948,28 +912,28 @@ public class MoreToolVariantItems {
         registerBrushItem(WARPED_BRUSH, WARPED_STICK);
     }
 
-    static void registerAxeItem(Item axeItem, Item stickIngredient, Item toolIngredient, String toolType) {
+    private static void registerAxeItem(Item axeItem, Item stickIngredient, Item toolIngredient, String toolType) {
         String stickWood;
         if (stickIngredient.equals(Items.BAMBOO)) {stickWood = "bamboo";} else if (stickIngredient.equals(Items.STICK)) {stickWood = "oak";} else { stickWood = ((MoreStickVariantItem) stickIngredient).mstvWoodType;}
         String axeName = stickWood + "_" + toolType + "_axe";
         more_axes.add(axeItem);
         registerTieredToolItem(axeItem, stickIngredient, toolIngredient, axeName, toolType);
     }
-    static void registerPickaxeItem(Item pickaxeItem, Item stickIngredient, Item toolIngredient, String toolType) {
+    private static void registerPickaxeItem(Item pickaxeItem, Item stickIngredient, Item toolIngredient, String toolType) {
         String stickWood;
         if (stickIngredient.equals(Items.BAMBOO)) {stickWood = "bamboo";} else if (stickIngredient.equals(Items.STICK)) {stickWood = "oak";} else { stickWood = ((MoreStickVariantItem) stickIngredient).mstvWoodType;}
         String pickaxeName = stickWood + "_" + toolType + "_pickaxe";
         more_pickaxes.add(pickaxeItem);
         registerTieredToolItem(pickaxeItem, stickIngredient, toolIngredient, pickaxeName, toolType);
     }
-    static void registerHoeItem(Item hoeItem, Item stickIngredient, Item toolIngredient, String toolType) {
+    private static void registerHoeItem(Item hoeItem, Item stickIngredient, Item toolIngredient, String toolType) {
         String stickWood;
         if (stickIngredient.equals(Items.BAMBOO)) {stickWood = "bamboo";} else if (stickIngredient.equals(Items.STICK)) {stickWood = "oak";} else { stickWood = ((MoreStickVariantItem) stickIngredient).mstvWoodType;}
         String hoeName = stickWood + "_" + toolType + "_hoe";
         more_hoes.add(hoeItem);
         registerTieredToolItem(hoeItem, stickIngredient, toolIngredient, hoeName, toolType);
     }
-    static void registerShovelItem(Item shovelItem, Item stickIngredient, Item toolIngredient, String toolType) {
+    private static void registerShovelItem(Item shovelItem, Item stickIngredient, Item toolIngredient, String toolType) {
         String stickWood;
         if (stickIngredient.equals(Items.BAMBOO)) {stickWood = "bamboo";} else if (stickIngredient.equals(Items.STICK)) {stickWood = "oak";} else { stickWood = ((MoreStickVariantItem) stickIngredient).mstvWoodType;}
         String shovelName = stickWood + "_" + toolType + "_shovel";

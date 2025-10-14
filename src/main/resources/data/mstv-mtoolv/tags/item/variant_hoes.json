@@ -57,10 +57,6 @@
     "mstv-mtoolv:mangrove_golden_hoe",
     "mstv-mtoolv:spruce_golden_hoe",
     "mstv-mtoolv:warped_golden_hoe",
-    {
-      "id": "#mstv-mtoolv:variant_copper_hoes",
-      "required": false
-    },
     "mstv-mtoolv:acacia_iron_hoe",
     "mstv-mtoolv:bamboo_iron_hoe",
     "mstv-mtoolv:birch_iron_hoe",

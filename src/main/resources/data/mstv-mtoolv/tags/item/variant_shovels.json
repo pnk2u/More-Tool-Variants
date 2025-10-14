@@ -57,10 +57,6 @@
     "mstv-mtoolv:mangrove_golden_shovel",
     "mstv-mtoolv:spruce_golden_shovel",
     "mstv-mtoolv:warped_golden_shovel",
-    {
-      "id": "#mstv-mtoolv:variant_copper_shovels",
-      "required": false
-    },
     "mstv-mtoolv:acacia_iron_shovel",
     "mstv-mtoolv:bamboo_iron_shovel",
     "mstv-mtoolv:birch_iron_shovel",
