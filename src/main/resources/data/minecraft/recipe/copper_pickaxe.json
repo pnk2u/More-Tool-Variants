@@ -1,10 +1,10 @@
 {
   "fabric:load_conditions": [
     {
-      "condition": "fabric:tags_populated",
+      "condition": "fabric:registry_contains",
       "registry": "minecraft:item",
       "values": [
-        "mstv-toolv:variant_copper_tools"
+        "minecraft:copper_pickaxe"
       ]
     }
   ],
