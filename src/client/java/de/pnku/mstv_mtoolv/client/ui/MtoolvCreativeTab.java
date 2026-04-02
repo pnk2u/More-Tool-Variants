@@ -2,7 +2,7 @@ package de.pnku.mstv_mtoolv.client.ui;
 
 import de.pnku.mstv_mtoolv.MoreToolVariants;
 import de.pnku.mstv_mtoolv.item.MoreToolVariantItems;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -15,7 +15,7 @@ public class MtoolvCreativeTab extends CreativeModeTabs {
 
     public static CreativeModeTab TOOL_VARIANTS;
 
-    public static final CreativeModeTab.Builder MTOOLV_CMT_BUILDER = FabricItemGroup.builder().title(Component.translatable("itemGroup.toolVariants")).icon(() -> new ItemStack(MoreToolVariantItems.WARPED_GOLDEN_PICKAXE)).displayItems(((displayContext, entries) -> {
+    public static final CreativeModeTab.Builder MTOOLV_CMT_BUILDER = FabricCreativeModeTab.builder().title(Component.translatable("itemGroup.toolVariants")).icon(() -> new ItemStack(MoreToolVariantItems.WARPED_GOLDEN_PICKAXE)).displayItems(((displayContext, entries) -> {
         for (Item toolItem : more_tools)
         {
             entries.accept(toolItem);
