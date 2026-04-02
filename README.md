@@ -59,18 +59,19 @@
 ### Versions
 <a name="most-recent-version"></a>
 <!--CHANGELOG:START-->
-<a name="1.1.2"></a>
-#### 1.1.2[*](#footnote-*):
-- Re-add vanilla _Pickaxes_ to "**Getting an Upgrade**" and "**Isn't It Iron Pick**"
-- Add "**Serious Dedication**" advancement
-- `1.20.1`: Fix newly added advancements
+<a name="1.2.2"></a>
+#### 1.2.2[*](#footnote-*):
+- `26.1`: Update to <ins>26.1</ins>
 
-<h2><sub><sub><sup><ins>Download 1.1.2 + 1.21(.1)</ins>:</sup>&#x200A;
-<a title="Download (Modrinth):&#10;More Tool Variants 1.1.2 + 1.21(.1)" href="https://modrinth.com/mod/more-tool-variants/version/ylQrrxLY">
-<img width=26 src="https://img.shields.io/badge/-%20-%230f91?style=flat&logo=modrinth"></a>
+<br></br>
+<sub>License update to [`CC-BY-NC-SA-4.0`](https://creativecommons.org/licenses/by-nc-sa/4.0/) (previously [`MIT`](https://choosealicense.com/licenses/mit))</sub>
+
+<h2><sub><sub><sup><ins>Download 1.2.2 + 1.21.5(-11)</ins>:</sup>&#x200A;
+<a title="Download (Modrinth):&#10;More Tool Variants 1.2.2 + 1.21.5(-11)" href="https://www.modrinth.com/mod/kI2bVWDr/version/zwt8gHut">
+<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>
 <sup><img width=7 height=10 src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/separator_v.svg"></sup>
-<a title="Download (Curseforge):&#10;More Tool Variants 1.1.2 + 1.21(.1)" href="https://www.curseforge.com/minecraft/mc-mods/more-tool-variants/files/6297439">
-<img width=26 src="https://img.shields.io/badge/--%23f062?style=flat&logo=curseforge"></a>
+<a title="Download (Curseforge):&#10;1.2.2 + 1.21.5(-11) - More Tool Variants" href="https://www.curseforge.com/minecraft/mc-mods/more-tool-variants/files/7863976">
+<img width=26 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a>
 </sub></sub></h2>
 
 <!--CHANGELOG:END-->
