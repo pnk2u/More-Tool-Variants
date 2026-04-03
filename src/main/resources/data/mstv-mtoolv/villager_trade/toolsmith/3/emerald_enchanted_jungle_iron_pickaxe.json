@@ -25,7 +25,7 @@
     {
       "function": "minecraft:filtered",
       "item_filter": {
-        "items": "minecraft:iron_pickaxe",
+        "items": "mstv-mtoolv:jungle_iron_pickaxe",
         "predicates": {
           "minecraft:enchantments": [
             {}

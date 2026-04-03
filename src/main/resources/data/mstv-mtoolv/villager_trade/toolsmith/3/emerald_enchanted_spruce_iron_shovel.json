@@ -25,7 +25,7 @@
     {
       "function": "minecraft:filtered",
       "item_filter": {
-        "items": "minecraft:iron_shovel",
+        "items": "mstv-mtoolv:spruce_iron_shovel",
         "predicates": {
           "minecraft:enchantments": [
             {}

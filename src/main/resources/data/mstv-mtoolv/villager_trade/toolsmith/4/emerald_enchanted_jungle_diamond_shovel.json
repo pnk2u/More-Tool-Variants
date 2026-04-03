@@ -25,7 +25,7 @@
     {
       "function": "minecraft:filtered",
       "item_filter": {
-        "items": "minecraft:diamond_shovel",
+        "items": "mstv-mtoolv:jungle_diamond_shovel",
         "predicates": {
           "minecraft:enchantments": [
             {}

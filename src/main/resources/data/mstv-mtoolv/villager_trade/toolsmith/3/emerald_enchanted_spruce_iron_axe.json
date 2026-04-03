@@ -25,7 +25,7 @@
     {
       "function": "minecraft:filtered",
       "item_filter": {
-        "items": "minecraft:iron_axe",
+        "items": "mstv-mtoolv:spruce_iron_axe",
         "predicates": {
           "minecraft:enchantments": [
             {}

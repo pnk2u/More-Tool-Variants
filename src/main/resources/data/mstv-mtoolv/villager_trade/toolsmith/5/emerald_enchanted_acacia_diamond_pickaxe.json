@@ -24,7 +24,7 @@
     {
       "function": "minecraft:filtered",
       "item_filter": {
-        "items": "minecraft:diamond_pickaxe",
+        "items": "mstv-mtoolv:acacia_diamond_pickaxe",
         "predicates": {
           "minecraft:enchantments": [
             {}
