@@ -7,7 +7,7 @@ import net.minecraft.world.item.ToolMaterial;
 import static de.pnku.mstv_base.item.MoreStickVariantItems.*;
 import static de.pnku.mstv_mtoolv.item.MoreToolVariantItems.*;
 
-public class MoreToolVariantCopper {
+public class MoreToolVariantCopperItems {
 
     // TOOL: Copper Axes
     public static final Item ACACIA_COPPER_AXE = createToolItem("axe", ToolMaterial.COPPER, 3, "acacia", 7.0F, -3.2F);
