@@ -30,7 +30,9 @@ public class MoreToolVariants implements ModInitializer {
 			var minecraft = FabricLoader.getInstance().getModContainer("minecraft");
 			if (minecraft.isEmpty()) throw new Exception("Couldn't find Minecraft.");
 			String[] semVer = minecraft.get().getMetadata().getVersion().getFriendlyString().split("-", 2)[0].split("\\.");
-			int x = Integer.parseInt(semVer[0]), y = Integer.parseInt(semVer[1]), z = Integer.parseInt(semVer[2]);
+			int x = Integer.parseInt(semVer[0]);
+			int y = semVer.length > 1 ? Integer.parseInt(semVer[1]) : 0;
+			int z = semVer.length > 2 ? Integer.parseInt(semVer[2]) : 0;
 			return x > major || (x == major && (y > minor || (y == minor && z >= patch)));
 		} catch (Exception e) {
 			LOGGER.error("Error checking Minecraft version", e);
