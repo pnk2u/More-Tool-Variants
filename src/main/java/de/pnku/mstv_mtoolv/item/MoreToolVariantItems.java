@@ -853,6 +853,9 @@ public class MoreToolVariantItems {
         registerPickaxeItem(OAK_BLACKSTONE_PICKAXE, Items.STICK, Items.BLACKSTONE, "blackstone");
         registerAxeItem(OAK_BLACKSTONE_AXE, Items.STICK, Items.BLACKSTONE, "blackstone");
         registerHoeItem(OAK_BLACKSTONE_HOE, Items.STICK, Items.BLACKSTONE, "blackstone");
+        if (hasCopperTools) {
+            MoreToolVariantCopperItems.registerCopperToolsByVariant("oak");
+        }
         more_tools.add(Items.IRON_SHOVEL);
         more_tools.add(Items.IRON_PICKAXE);
         more_tools.add(Items.IRON_AXE);

@@ -108,6 +108,11 @@ public class MoreToolVariantCopperItems {
                                 registerAxeItem(MANGROVE_COPPER_AXE, MANGROVE_STICK, Items.COPPER_INGOT, "copper");
                                 registerHoeItem(MANGROVE_COPPER_HOE, MANGROVE_STICK, Items.COPPER_INGOT, "copper");
             }
+            case "oak" -> {     more_tools.add(Items.COPPER_SHOVEL);
+                                more_tools.add(Items.COPPER_PICKAXE);
+                                more_tools.add(Items.COPPER_AXE);
+                                more_tools.add(Items.COPPER_HOE);
+            }
             case "spruce" -> {  registerShovelItem(SPRUCE_COPPER_SHOVEL, SPRUCE_STICK, Items.COPPER_INGOT, "copper");
                                 registerPickaxeItem(SPRUCE_COPPER_PICKAXE, SPRUCE_STICK, Items.COPPER_INGOT, "copper");
                                 registerAxeItem(SPRUCE_COPPER_AXE, SPRUCE_STICK, Items.COPPER_INGOT, "copper");
