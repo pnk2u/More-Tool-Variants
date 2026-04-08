@@ -15,7 +15,7 @@ public class MtoolvCreativeTab extends CreativeModeTabs {
 
     public static CreativeModeTab TOOL_VARIANTS;
 
-    public static final CreativeModeTab.Builder MTOOLV_CMT_BUILDER = FabricCreativeModeTab.builder().title(Component.translatable("itemGroup.toolVariants")).icon(() -> new ItemStack(MoreToolVariantItems.WARPED_GOLDEN_PICKAXE)).displayItems(((displayContext, entries) -> {
+    public static final CreativeModeTab.Builder MTOOLV_CMT_BUILDER = FabricCreativeModeTab.builder().title(Component.translatable("itemGroup.mToolV")).icon(() -> new ItemStack(MoreToolVariantItems.WARPED_GOLDEN_PICKAXE)).displayItems(((displayContext, entries) -> {
         for (Item toolItem : more_tools)
         {
             entries.accept(toolItem);
