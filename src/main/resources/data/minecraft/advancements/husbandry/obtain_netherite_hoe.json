@@ -19,7 +19,7 @@
     "frame": "challenge",
     "icon": {
       "count": 1,
-      "id": "minecraft:netherite_hoe"
+      "item": "minecraft:netherite_hoe"
     },
     "title": {
       "translate": "advancements.husbandry.netherite_hoe.title"

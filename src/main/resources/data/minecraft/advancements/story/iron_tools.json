@@ -18,7 +18,7 @@
     },
     "icon": {
       "count": 1,
-      "id": "minecraft:iron_pickaxe"
+      "item": "minecraft:iron_pickaxe"
     },
     "title": {
       "translate": "advancements.story.iron_tools.title"
