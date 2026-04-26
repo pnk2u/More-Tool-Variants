@@ -1,6 +1,6 @@
 <a name="1.2.5"></a>
 ### 1.2.5:
-- `26.1`: Fix crash when opening Creative Mode inventory while <ins>More Weapon Variants</ins> (&#x200A;<sub><a title="More Weapon Variants&#10;on Modrinth" href="https://modrinth.com/mod/more-weapon-variants/"><img width=20 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a></sub><!--SEPARATOR_V:GH--><img width=7 height=10 src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/separator_v.svg"><sub><a title="More Weapon Variants&#10;on Curseforge" href="https://www.curseforge.com/minecraft/mc-mods/more-weapon-variants/"><img width=20 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a></sub>&#x200A;) was installed in `26.1`  
+- `26.1`: Fix crash when opening Creative Mode inventory while <ins>More Weapon Variants</ins> (&#x200A;<sub><a title="More Weapon Variants&#10;on Modrinth" href="https://modrinth.com/mod/more-weapon-variants/"><img width=20 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>&#x200A;&#x200A;&#x200A;<a title="More Weapon Variants&#10;on Curseforge" href="https://www.curseforge.com/minecraft/mc-mods/more-weapon-variants/"><img width=20 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a></sub>&#x200A;) was installed in `26.1`  
     > `26.1.1` was unaffected
 - `1.21.9+`: Add missing vanilla/_Oak Copper Tools_ to "_More Tool Variants_" Creative Mode tab
 - Fix "_More Tool Variants_" Creative Mode tab name  
@@ -9,8 +9,7 @@
 
 <h2><sub><sub><sup><ins>Download 1.2.5 + 1.21(.1)</ins>:</sup>&#x200A;
 <a title="Download (Modrinth):&#10;More Tool Variants 1.2.5 + 1.21(.1)" href="https://www.modrinth.com/mod/kI2bVWDr/version/Pf6vfeXp">
-<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>
-<sup><img width=7 height=10 src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/separator_v.svg"></sup>
+<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>&#x200A;
 <a title="Download (Curseforge):&#10;1.2.5 + 1.21(.1) - More Tool Variants" href="https://www.curseforge.com/minecraft/mc-mods/more-tool-variants/files/7895811">
 <img width=26 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a>
 </sub></sub></h2>
@@ -21,8 +20,7 @@
 
 <h2><sub><sub><sup><ins>Download 1.2.4 + 26.1</ins>:</sup>&#x200A;
 <a title="Download (Modrinth):&#10;More Tool Variants 1.2.4 + 26.1" href="https://www.modrinth.com/mod/kI2bVWDr/version/BkrePfEK">
-<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>
-<sup><img width=7 height=10 src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/separator_v.svg"></sup>
+<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>&#x200A;
 <a title="Download (Curseforge):&#10;1.2.4 + 26.1 - More Tool Variants" href="https://www.curseforge.com/minecraft/mc-mods/more-tool-variants/files/7866944">
 <img width=26 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a>
 </sub></sub></h2>
@@ -30,12 +28,11 @@
 <a name="1.2.3"></a>
 ### 1.2.3:
 - `26.1`: Implement _Villagers_ trading _Tool_ variants
-  > This was formerly a feature of <ins>More Stick Variants (MStV)</ins> (&#x200A;<sub><a title="More Stick Variants (MStV)&#10;on Modrinth" href="https://modrinth.com/mod/more-stick-variants/"><img width=20 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a></sub><!--SEPARATOR_V:GH--><img width=7 height=10 src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/separator_v.svg"><sub><a title="More Stick Variants (MStV)&#10;on Curseforge" href="https://www.curseforge.com/minecraft/mc-mods/more-stick-variants/"><img width=20 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a></sub>&#x200A;) but with Minecraft <ins>26.1</ins>, _Villager_ trading has become data-driven allowing for each _More Variants_ mod to implement this feature for their respective block/item variants without needing to rely on <ins>MStV</ins> (&#x200A;<sub><a title="MStV&#10;on Modrinth" href="https://modrinth.com/mod/more-stick-variants/"><img width=20 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a></sub><!--SEPARATOR_V:GH--><img width=7 height=10 src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/separator_v.svg"><sub><a title="MStV&#10;on Curseforge" href="https://www.curseforge.com/minecraft/mc-mods/more-stick-variants/"><img width=20 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a></sub>&#x200A;) for this functionality.
+  > This was formerly a feature of <ins>More Stick Variants (MStV)</ins> (&#x200A;<sub><a title="More Stick Variants (MStV)&#10;on Modrinth" href="https://modrinth.com/mod/more-stick-variants/"><img width=20 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>&#x200A;&#x200A;&#x200A;<a title="More Stick Variants (MStV)&#10;on Curseforge" href="https://www.curseforge.com/minecraft/mc-mods/more-stick-variants/"><img width=20 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a></sub>&#x200A;) but with Minecraft <ins>26.1</ins>, _Villager_ trading has become data-driven allowing for each _More Variants_ mod to implement this feature for their respective block/item variants without needing to rely on <ins>MStV</ins> (&#x200A;<sub><a title="MStV&#10;on Modrinth" href="https://modrinth.com/mod/more-stick-variants/"><img width=20 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>&#x200A;&#x200A;&#x200A;<a title="MStV&#10;on Curseforge" href="https://www.curseforge.com/minecraft/mc-mods/more-stick-variants/"><img width=20 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a></sub>&#x200A;) for this functionality.
 
 <h2><sub><sub><sup><ins>Download 1.2.3 + 26.1</ins>:</sup>&#x200A;
 <a title="Download (Modrinth):&#10;More Tool Variants 1.2.3 + 26.1" href="https://www.modrinth.com/mod/kI2bVWDr/version/yR52S0oN">
-<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>
-<sup><img width=7 height=10 src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/separator_v.svg"></sup>
+<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>&#x200A;
 <a title="Download (Curseforge):&#10;1.2.3 + 26.1 - More Tool Variants" href="https://www.curseforge.com/minecraft/mc-mods/more-tool-variants/files/7865215">
 <img width=26 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a>
 </sub></sub></h2>
@@ -49,8 +46,7 @@
 
 <h2><sub><sub><sup><ins>Download 1.2.2 + 1.21(.1)</ins>:</sup>&#x200A;
 <a title="Download (Modrinth):&#10;More Tool Variants 1.2.2 + 1.21(.1)" href="https://www.modrinth.com/mod/kI2bVWDr/version/tWPaelOf">
-<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>
-<sup><img width=7 height=10 src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/separator_v.svg"></sup>
+<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>&#x200A;
 <a title="Download (Curseforge):&#10;1.2.2 + 1.21(.1) - More Tool Variants" href="https://www.curseforge.com/minecraft/mc-mods/more-tool-variants/files/7863936">
 <img width=26 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a>
 </sub></sub></h2>
