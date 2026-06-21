@@ -1,3 +1,15 @@
+<a name="1.2.7"></a>
+### 1.2.7:
+- `26.1(2)`: Update to <ins>26.2</ins>
+
+
+<h2><sub><sub><sup><ins>Download 1.2.7 + 26.1(2)</ins>:</sup>&#x200A;
+<a title="Download (Modrinth):&#10;More Tool Variants 1.2.7 + 26.1(2)" href="https://www.modrinth.com/mod/kI2bVWDr/version/5JDnhL1v">
+<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>&#x200A;
+<a title="Download (Curseforge):&#10;1.2.7 + 26.1(2) - More Tool Variants" href="https://www.curseforge.com/minecraft/mc-mods/more-tool-variants/files/8292848">
+<img width=26 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a>
+</sub></sub></h2>
+
 <a name="1.2.6"></a>
 ### 1.2.6:
 - `1.20.1`: Fix broken _Tool_-related Advancements
